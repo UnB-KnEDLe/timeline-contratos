@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - './api:/usr/src/app'
+    ports:
+      - 5015:5000
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_URL=${DB_URL}
+      - FLASK_APP=timeline/__init__.py
+      - FLASK_ENV=development
+      - APP_SETTINGS=timeline.config.DevelopmentConfig
+  mongo:
+    image: mongo
+    command: mongod --port 27009
+    volumes:
+      - /mongo:/data/db
+    ports:
+      - 27009:27009
