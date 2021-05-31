@@ -11,15 +11,19 @@ services:
     ports:
       - 5015:5000
     environment:
-      - DB_NAME=${DB_NAME}
-      - DB_URL=${DB_URL}
-      - FLASK_APP=timeline/__init__.py
       - FLASK_ENV=development
-      - APP_SETTINGS=timeline.config.DevelopmentConfig
-  mongo:
-    image: mongo
-    command: mongod --port 27009
-    volumes:
-      - /mongo:/data/db
+      - APP_SETTINGS=project.config.DevelopmentConfig
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/test
+    depends_on: 
+      - db
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile-Postgres
     ports:
-      - 27009:27009
+      - 5435:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
