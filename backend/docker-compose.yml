@@ -5,14 +5,14 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
     volumes:
-      - './api:/usr/src/app'
+      - '.:/app'
     ports:
       - 5015:5000
     environment:
       - FLASK_ENV=development
-      - APP_SETTINGS=project.config.DevelopmentConfig
+      - APP_SETTINGS=api.config.DevelopmentConfig
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
       - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/test
     depends_on: 

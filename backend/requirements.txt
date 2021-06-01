@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+Flask-Testing
+Flask-Migrate
+black
+gunicorn
+sqlalchemy
+coverage

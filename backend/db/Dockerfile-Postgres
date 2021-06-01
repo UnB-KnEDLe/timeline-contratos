@@ -1,5 +1,13 @@
 # base image
 FROM postgres:11.2-alpine
 
+# Set Workdir
+WORKDIR /db
+
+# Copy database files
+COPY . /db
+
 # run create.sql on init
 ADD create.sql /docker-entrypoint-initdb.d
+ADD ddl.sql /docker-entrypoint-initdb.d
+ADD popula.sql /docker-entrypoint-initdb.d
