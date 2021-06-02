@@ -16,7 +16,7 @@ CREATE TABLE ATOS(
     cod_ato INT,
     CONSTRAINT ATOS_PK PRIMARY KEY (id_ato),
                 FOREIGN KEY(id_certame)
-                 REFERENCES CERTAME(id_certame),
-                 FOREIGN KEY (cod_ato)
-                 REFERENCES TIPO_ATO(cod_ato)
+                    REFERENCES CERTAME(id_certame),
+                FOREIGN KEY (cod_ato)
+                    REFERENCES TIPO_ATO(cod_ato)
 );
