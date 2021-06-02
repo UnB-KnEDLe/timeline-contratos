@@ -1,27 +1,27 @@
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (1, 'AVISO DE ABERTURA DE LICITACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (2, 'AVISO DE HOMOLOGACAO E ADJUDICACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (3, 'AVISO DE HOMOLOGACAO E CONVOCACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (4, 'AVISO DE RESULTADO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (5, 'AVISO DO RESULTADO DE JULGAMENTO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (6, 'AVISO DE DECLARACAO DE VENCEDOR');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (7, 'AVISO DE JULGAMENTO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (8, 'AVISO DE JULGAMENTO DE HABILITACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (9, 'AVISO DE JULGAMENTO DE RECURSO ADMINISTRATIVO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (10, 'AVISO DE SUSPENSAO DE LICITACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (11, 'AVISO DE ADIAMENTO DE LICITACAO');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (12, 'AVISO DE NOVA DATA DE ABERTURA');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (13, 'AVISO DE REABERTURA');
-INSERT INTO tipo_ato (cod_ato, descricao) VALUES (14, 'AVISO DE LICITACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (1, 'AVISO DE ABERTURA DE LICITACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (2, 'AVISO DE HOMOLOGACAO E ADJUDICACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (3, 'AVISO DE HOMOLOGACAO E CONVOCACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (4, 'AVISO DE RESULTADO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (5, 'AVISO DO RESULTADO DE JULGAMENTO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (6, 'AVISO DE DECLARACAO DE VENCEDOR');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (7, 'AVISO DE JULGAMENTO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (8, 'AVISO DE JULGAMENTO DE HABILITACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (9, 'AVISO DE JULGAMENTO DE RECURSO ADMINISTRATIVO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (10, 'AVISO DE SUSPENSAO DE LICITACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (11, 'AVISO DE ADIAMENTO DE LICITACAO');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (12, 'AVISO DE NOVA DATA DE ABERTURA');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (13, 'AVISO DE REABERTURA');
+INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (14, 'AVISO DE LICITACAO');
 
-INSERT INTO certame (id_certame, processo) VALUES (1, '0010009842017');
-INSERT INTO certame (id_certame, processo) VALUES (2, '0010006052018');
-INSERT INTO certame (id_certame, processo) VALUES (3, '0005000010640201889');
-INSERT INTO certame (id_certame, processo) VALUES (4, '0010008132018');
-INSERT INTO certame (id_certame, processo) VALUES (5, '000500012995201811');
-INSERT INTO certame (id_certame, processo) VALUES (6, '0010004122018');
-INSERT INTO certame (id_certame, processo) VALUES (7, '0005000153415201755');
+INSERT INTO CERTAME (id_certame, processo) VALUES (1, '0010009842017');
+INSERT INTO CERTAME (id_certame, processo) VALUES (2, '0010006052018');
+INSERT INTO CERTAME (id_certame, processo) VALUES (3, '0005000010640201889');
+INSERT INTO CERTAME (id_certame, processo) VALUES (4, '0010008132018');
+INSERT INTO CERTAME (id_certame, processo) VALUES (5, '000500012995201811');
+INSERT INTO CERTAME (id_certame, processo) VALUES (6, '0010004122018');
+INSERT INTO CERTAME (id_certame, processo) VALUES (7, '0005000153415201755');
 
-INSERT INTO atos (id_ato, data_dodf, texto, id_certame, cod_ato) VALUES (1, '14-12-2010', ' (UASG) 926523
+INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (1, '14-12-2010', ' (UASG) 926523
 PREGAO ELETRONICO No 01/2019
 A SECRETARIA DE ESTADO DA AGRICULTURA, ABASTECIMENTO E DESENVOLVIMENTO
 RURAL DO DISTRITO FEDERAL - SEAGRI/DF, torna publico a abertura de licitacao do tipo MENOR
@@ -35,7 +35,8 @@ quantitativos e especificacoes contidas no Termo de Referencia e demais Anexos q
 com valor Total de, R$ 23.170,61 (vinte e tres mil cento e setenta reais e sessenta e um centavos). O Edital
 podera ser retirado a partir da sua publicacao no endereco: www.comprasnet.gov.br. e portal da
 SEAGRI/DF, "Edital"', 1, 1);
-INSERT INTO atos (id_ato, data_dodf, texto, id_certame, cod_ato) VALUES (2, '09-03-2011', '
+
+INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (2, '09-03-2011', '
 PREGAO ELETRONICO No 04/2019
 Processo: 001-000984/2017. Objeto: prestacao de servicos de apoio administrativo, por meio de
 recepcionistas, para a CLDF, conforme Termo de Referencia, Anexo I do Edital. Valor estimado: R$
@@ -43,7 +44,8 @@ recepcionistas, para a CLDF, conforme Termo de Referencia, Anexo I do Edital. Va
 www.comprasnet.gov.br.  Tipo:  menor preco  global.  O  edital encontra-se  nos  enderecos:
 www.comprasnet.gov.br (UASG 974004) e www.cl.df.gov.br, no link transparencia. Maiores informacoes
 (61) 3348-8650. Brasilia-DF, 12/02/2019. Daniel Luchine Ishihara - Pregoeiro', 2, 1);
-INSERT INTO atos (id_ato, data_dodf, texto, id_certame, cod_ato) VALUES (3, '03-05-2012', '
+
+INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (3, '03-05-2012', '
 PREGAO ELETRONICO No 05/2019
 Processo: 001-000605/2018. Objeto: Contratacao de empresa especializada para manutencao corretiva com
 fornecimento de pecas novas e originais a 840 (oitocentos e quarenta) computadores de marca HP-Hewlett

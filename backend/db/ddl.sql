@@ -1,22 +1,30 @@
-CREATE TABLE CERTAME(
+CREATE TABLE CERTAME (
     id_certame SERIAL NOT NULL,
-    processo VARCHAR(30),
-    CONSTRAINT CERTAME_PK primary key (id_certame)
+    n_processo VARCHAR(30),
+    CONSTRAINT CERTAME_PK PRIMARY KEY (id_certame)
 );
-CREATE TABLE TIPO_ATO(
-    cod_ato SERIAL NOT NULL,
-    descricao VARCHAR(50),
-    CONSTRAINT TIPO_ATO_PK PRIMARY KEY (cod_ato)
+
+CREATE TABLE TIPO_ATO (
+    id_tipo SERIAL NOT NULL,
+    descricao TEXT,
+    CONSTRAINT TIPO_ATO_PK PRIMARY KEY (id_tipo)
 );
-CREATE TABLE ATOS(
+
+CREATE TABLE ATOS (
     id_ato SERIAL NOT NULL,
-    data_dodf VARCHAR(15),
-    texto text,
+    data_dodf DATE,
+    texto TEXT,
     id_certame INT,
-    cod_ato INT,
+    id_tipo INT,
     CONSTRAINT ATOS_PK PRIMARY KEY (id_ato),
-                FOREIGN KEY(id_certame)
-                    REFERENCES CERTAME(id_certame),
-                FOREIGN KEY (cod_ato)
-                    REFERENCES TIPO_ATO(cod_ato)
+
+    CONSTRAINT ATOS_CERTAME_FK FOREIGN KEY(id_certame)
+        REFERENCES CERTAME(id_certame)
+        ON DELETE RESTRICT
+        ON UPDATE RESTRICT,
+
+    CONSTRAINT ATOS_TIPO_ATO_FK FOREIGN KEY(id_tipo)
+        REFERENCES TIPO_ATO(id_tipo)
+        ON DELETE RESTRICT
+        ON UPDATE RESTRICT
 );
