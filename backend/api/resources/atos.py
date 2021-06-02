@@ -18,7 +18,7 @@ def get_ato(processo):
         [
             request.to_json()
             for request in CertameModel.query.filter(
-                CertameModel.id_certame == processo).all()
+                CertameModel.processo == processo).all()
         ]
     )
 
