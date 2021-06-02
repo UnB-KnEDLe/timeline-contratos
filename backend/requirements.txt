@@ -7,3 +7,5 @@ black
 gunicorn
 sqlalchemy
 coverage
+flask_restful
+flask_cors
