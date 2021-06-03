@@ -13,15 +13,15 @@ INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (12, 'AVISO DE NOVA DATA DE ABE
 INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (13, 'AVISO DE REABERTURA');
 INSERT INTO TIPO_ATO (id_tipo, descricao) VALUES (14, 'AVISO DE LICITACAO');
 
-INSERT INTO CERTAME (id_certame, processo) VALUES (1, '0010009842017');
-INSERT INTO CERTAME (id_certame, processo) VALUES (2, '0010006052018');
-INSERT INTO CERTAME (id_certame, processo) VALUES (3, '0005000010640201889');
-INSERT INTO CERTAME (id_certame, processo) VALUES (4, '0010008132018');
-INSERT INTO CERTAME (id_certame, processo) VALUES (5, '000500012995201811');
-INSERT INTO CERTAME (id_certame, processo) VALUES (6, '0010004122018');
-INSERT INTO CERTAME (id_certame, processo) VALUES (7, '0005000153415201755');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (1, '0010009842017');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (2, '0010006052018');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (3, '0005000010640201889');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (4, '0010008132018');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (5, '000500012995201811');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (6, '0010004122018');
+INSERT INTO CERTAME (id_certame, n_processo) VALUES (7, '0005000153415201755');
 
-INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (1, '14-12-2010', ' (UASG) 926523
+INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (1, '12-14-2010', ' (UASG) 926523
 PREGAO ELETRONICO No 01/2019
 A SECRETARIA DE ESTADO DA AGRICULTURA, ABASTECIMENTO E DESENVOLVIMENTO
 RURAL DO DISTRITO FEDERAL - SEAGRI/DF, torna publico a abertura de licitacao do tipo MENOR
@@ -43,7 +43,7 @@ recepcionistas, para a CLDF, conforme Termo de Referencia, Anexo I do Edital. Va
 553.232,16. Data/hora da Sessao Publica: 26/02/2019, as 10:00. Local: Internet, no endereco
 www.comprasnet.gov.br.  Tipo:  menor preco  global.  O  edital encontra-se  nos  enderecos:
 www.comprasnet.gov.br (UASG 974004) e www.cl.df.gov.br, no link transparencia. Maiores informacoes
-(61) 3348-8650. Brasilia-DF, 12/02/2019. Daniel Luchine Ishihara - Pregoeiro', 2, 1);
+(61) 3348-8650. Brasilia-DF, 12/02/2019. Daniel Luchine Ishihara - Pregoeiro', 2, 2);
 
 INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (3, '03-05-2012', '
 PREGAO ELETRONICO No 05/2019
