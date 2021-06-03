@@ -14,7 +14,7 @@ export const App: React.FC = () => {
         <Router>
           <Route path="/" exact component={Home} />
           <Route path="/timeline" exact component={Timeline} />
-          <Route path="/without-process" exact component={WithoutProcess} />
+          <Route path="/404" exact component={WithoutProcess} />
         </Router>
       </AppProvider>
       <GlobalStyle />
