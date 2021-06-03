@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { HiOutlineDocumentSearch } from 'react-icons/hi';
 import { BiSearchAlt } from 'react-icons/bi';
 import { FormHandles } from '@unform/core';
@@ -22,6 +22,7 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
+  const [acts, setActs] = useState();
 
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
@@ -39,7 +40,7 @@ export const Home: React.FC = () => {
 
         await api.get(`/atos/${data.contract}`).then((res) => {
           const act = res.data;
-          console.log(act);
+          setActs(act);
         });
 
         history.push('/');
@@ -103,6 +104,7 @@ export const Home: React.FC = () => {
           </Wrapper>
         </Form>
       </Process>
+      {acts ? <Link to="/timeline" /> : <Link to="/timeline" />}
     </Container>
   );
 };

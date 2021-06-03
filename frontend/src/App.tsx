@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
 import { GlobalStyle } from './styles/global';
 import AppProvider from './hooks/index';
+
+import { Home } from './pages/Home';
+import { Timeline } from './pages/TimeLine';
+import { WithoutProcess } from './pages/WithoutProcess';
 
 export const App: React.FC = () => {
   return (
@@ -10,7 +13,8 @@ export const App: React.FC = () => {
       <AppProvider>
         <Router>
           <Route path="/" exact component={Home} />
-          <Route path="/contract" exact component={Home} />
+          <Route path="/timeline" exact component={Timeline} />
+          <Route path="/without-process" exact component={WithoutProcess} />
         </Router>
       </AppProvider>
       <GlobalStyle />

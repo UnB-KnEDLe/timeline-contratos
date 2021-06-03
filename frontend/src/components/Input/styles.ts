@@ -55,7 +55,7 @@ export const Container = styled.section<ContainerProps>`
     color: #000;
 
     &::placeholder {
-      color: #666360;
+      color: #cbc2c2;
     }
   }
 
