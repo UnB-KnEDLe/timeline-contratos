@@ -12,8 +12,8 @@ export const App: React.FC = () => {
     <Router>
       <AppProvider>
         <Router>
-          <Route path="/alterar" exact component={Home} />
-          <Route path="/" component={TimelineActs} />
+          <Route path="/" exact component={Home} />
+          <Route path="/timeline" component={TimelineActs} />
           <Route path="/404" component={WithoutProcess} />
         </Router>
       </AppProvider>
