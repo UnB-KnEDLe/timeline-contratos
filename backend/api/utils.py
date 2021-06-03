@@ -7,6 +7,6 @@ def get_acts_process(requests: list) -> list:
         atos = AtosModel.query.filter_by(id_certame=id_certame).first()
         request["data_dodf"] = atos.data_dodf
         request["texto"] = atos.texto
-        request["cod_ato"] = atos.cod_ato
+        request["id_tipo"] = atos.id_tipo
 
     return requests

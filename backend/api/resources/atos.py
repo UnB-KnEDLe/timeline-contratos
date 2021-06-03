@@ -9,8 +9,8 @@ from api.utils import get_acts_process
 atos_blueprint = Blueprint('_atos', __name__)
 
 
-@atos_blueprint.route('/atos/<processo>', methods=['GET'])
-def get_ato(processo):
+@atos_blueprint.route('/atos/<n_processo>', methods=['GET'])
+def get_ato(n_processo):
     """Get single ato details"""
     error_response = {"status": "fail", "message": "Request not found"}
 
@@ -18,7 +18,7 @@ def get_ato(processo):
         [
             request.to_json()
             for request in CertameModel.query.filter(
-                CertameModel.processo == processo).all()
+                CertameModel.n_processo == n_processo).all()
         ]
     )
 
