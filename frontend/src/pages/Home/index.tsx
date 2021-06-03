@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { HiOutlineDocumentSearch } from 'react-icons/hi';
+import { BiSearchAlt } from 'react-icons/bi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import { Link, useHistory } from 'react-router-dom';
@@ -7,9 +8,11 @@ import * as Yup from 'yup';
 import homeOneImg from '../../assets/homeOne.png';
 import { useToast } from '../../hooks/toast';
 import homeTwoImg from '../../assets/HomeTwo.png';
-import { Container, Process } from './styles';
+import { Container, Process, Wrapper } from './styles';
 import Input from '../../components/Input';
 import getValidationErrors from '../../utils/getValidationErrors';
+import api from '../../services/api';
+import Button from '../../components/Button';
 
 interface ContractFormData {
   contract: string;
@@ -25,14 +28,19 @@ export const Home: React.FC = () => {
       try {
         formRef.current?.setErrors({});
         const schema = Yup.object().shape({
-          contract: Yup.string().required('Processo Obrigatório'),
+          contract: Yup.string().required('Número de processo obrigatório'),
         });
 
         await schema.validate(data, {
           abortEarly: false,
         });
 
-        // await api.post('/users', data);
+        // http://localhost:5000/atos/0010009842017
+
+        await api.get(`/atos/${data.contract}`).then((res) => {
+          const act = res.data;
+          console.log(act);
+        });
 
         history.push('/');
 
@@ -85,11 +93,14 @@ export const Home: React.FC = () => {
       <Process>
         <Form ref={formRef} onSubmit={handleSubmit}>
           <h2>Digite o número do processo</h2>
-          <Input
-            name="contract"
-            placeholder="00410-00024230/2017-06"
-            icon={HiOutlineDocumentSearch}
-          />
+          <Wrapper>
+            <Input
+              name="contract"
+              placeholder="00410-00024230/2017-06"
+              icon={HiOutlineDocumentSearch}
+            />
+            <Button type="submit" icon={BiSearchAlt} />
+          </Wrapper>
         </Form>
       </Process>
     </Container>
