@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
           abortEarly: false,
         });
 
-        // http://localhost:5000/atos/0010009842017
+        // http://localhost:5000/atos/v
         const response = await api.get(`/atos/${data.contract}`);
         setActs(response.data);
         history.push('/timeline');
