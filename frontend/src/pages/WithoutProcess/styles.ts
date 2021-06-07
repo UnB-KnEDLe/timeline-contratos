@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
   div {
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 
     h1 {
       font-size: 3rem;
@@ -20,28 +23,27 @@ export const Container = styled.div`
   }
 `;
 
-export const BackButton = styled.div`
-    display: flex;
-    position: absolute;
-    width: 100rem;
-    height: 17rem;
+export const AreaLogo = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 
+  svg {
+    color: #2980b9;
+    margin-left: 7rem;
+  }
+  img {
+    margin: 0 auto;
+    padding-right: 15rem;
+  }
 `;
 
-export const AreaLogo = styled.div`
+export const ImageNotFound = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
-`;
-
-
-export const ImageNotFound = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding-left: 5rem;
-
+  padding-left: 5rem;
 `;

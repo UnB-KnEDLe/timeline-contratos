@@ -4,7 +4,7 @@ import { GlobalStyle } from './styles/global';
 import AppProvider from './hooks/index';
 
 import { Home } from './pages/Home';
-import { Timeline } from './pages/TimeLine';
+import { TimelineActs } from './pages/TimeLine';
 import { WithoutProcess } from './pages/WithoutProcess';
 
 export const App: React.FC = () => {
@@ -13,8 +13,8 @@ export const App: React.FC = () => {
       <AppProvider>
         <Router>
           <Route path="/" exact component={Home} />
-          <Route path="/timeline" exact component={Timeline} />
-          <Route path="/without-process" exact component={WithoutProcess} />
+          <Route path="/timeline" component={TimelineActs} />
+          <Route path="/404" component={WithoutProcess} />
         </Router>
       </AppProvider>
       <GlobalStyle />

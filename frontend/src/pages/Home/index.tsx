@@ -3,7 +3,7 @@ import { HiOutlineDocumentSearch } from 'react-icons/hi';
 import { BiSearchAlt } from 'react-icons/bi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import homeOneImg from '../../assets/homeOne.png';
 import { useToast } from '../../hooks/toast';
@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const [acts, setActs] = useState();
+  const [acts, setActs] = useState({});
 
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
@@ -36,14 +36,10 @@ export const Home: React.FC = () => {
           abortEarly: false,
         });
 
-        // http://localhost:5000/atos/0010009842017
-
-        await api.get(`/atos/${data.contract}`).then((res) => {
-          const act = res.data;
-          setActs(act);
-        });
-
-        history.push('/');
+        // http://localhost:5000/atos/v
+        const response = await api.get(`/atos/${data.contract}`);
+        setActs(response.data);
+        history.push('/timeline');
 
         addToast({
           type: 'success',
@@ -55,15 +51,17 @@ export const Home: React.FC = () => {
 
           formRef.current?.setErrors(errors);
           console.log(err);
-
           return;
         }
 
         addToast({
           type: 'error',
-          title: 'Erro no cadastro',
-          description: 'Ocorreu um erro ao fazer cadastro, tente novam',
+          title: 'Erro ao processar o contrato',
+          description:
+            'Ocorreu um erro ao encontrar o contrato, tente novamente',
         });
+
+        history.push('/404');
       }
     },
     [addToast, history]
@@ -104,7 +102,6 @@ export const Home: React.FC = () => {
           </Wrapper>
         </Form>
       </Process>
-      {acts ? <Link to="/timeline" /> : <Link to="/timeline" />}
     </Container>
   );
 };
