@@ -43,7 +43,7 @@ recepcionistas, para a CLDF, conforme Termo de Referencia, Anexo I do Edital. Va
 553.232,16. Data/hora da Sessao Publica: 26/02/2019, as 10:00. Local: Internet, no endereco
 www.comprasnet.gov.br.  Tipo:  menor preco  global.  O  edital encontra-se  nos  enderecos:
 www.comprasnet.gov.br (UASG 974004) e www.cl.df.gov.br, no link transparencia. Maiores informacoes
-(61) 3348-8650. Brasilia-DF, 12/02/2019. Daniel Luchine Ishihara - Pregoeiro', 2, 2);
+(61) 3348-8650. Brasilia-DF, 12/02/2019. Daniel Luchine Ishihara - Pregoeiro', 1, 2);
 
 INSERT INTO ATOS (id_ato, data_dodf, texto, id_certame, id_tipo) VALUES (3, '03-05-2012', '
 PREGAO ELETRONICO No 05/2019

@@ -1,7 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship
-from sqlalchemy.dialects import postgresql
-
 
 db = SQLAlchemy()
 
@@ -58,6 +55,6 @@ class AtosModel(db.Model):
             'id_ato': self.id_ato,
             'data_dodf': self.data_dodf,
             'texto': self.texto,
-            'certames': [certame.id_certame for certame in self.id_certame],
-            'tipo_atos': [tipo_ato.id_tipo for tipo_ato in self.id_tipo]
+            'certames': self.id_certame,
+            'tipo_atos': self.id_tipo
         }
