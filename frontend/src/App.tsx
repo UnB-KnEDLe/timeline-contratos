@@ -13,7 +13,7 @@ export const App: React.FC = () => {
       <AppProvider>
         <Router>
           <Route path="/" exact component={Home} />
-          <Route path="/timeline" component={TimelineActs} />
+          <Route path="/timeline/:contract" component={TimelineActs} />
           <Route path="/404" component={WithoutProcess} />
         </Router>
       </AppProvider>

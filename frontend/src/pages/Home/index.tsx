@@ -14,6 +14,13 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import api from '../../services/api';
 import Button from '../../components/Button';
 
+interface ActParam {
+  data_dodf: string;
+  texto: string;
+  id_ato: number;
+  tipo_atos: number;
+}
+
 interface ContractFormData {
   contract: string;
 }
@@ -22,7 +29,7 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const [acts, setActs] = useState({});
+  const [acts, setActs] = useState<ActParam[]>([]);
 
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
@@ -36,10 +43,12 @@ export const Home: React.FC = () => {
           abortEarly: false,
         });
 
-        // http://localhost:5000/atos/v
-        const response = await api.get(`/atos/${data.contract}`);
-        setActs(response.data);
-        history.push('/timeline');
+        // http://localhost:5000/atos/0010009842017
+        const response = await api.get(`/${data.contract}`);
+
+        // setActs(response.data.acts);
+        // console.log(acts);
+        history.push(`/timeline/${data.contract}`);
 
         addToast({
           type: 'success',
