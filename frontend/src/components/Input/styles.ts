@@ -14,6 +14,7 @@ export const Container = styled.section<ContainerProps>`
   /* Colocamos a bordinha que ficará vermelha */
   border: 0.3rem solid #666360;
   padding: 1rem;
+  padding-right: 3rem;
   width: 100%;
   height: 7.5rem;
 

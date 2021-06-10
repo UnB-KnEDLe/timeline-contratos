@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { HiOutlineDocumentSearch } from 'react-icons/hi';
 import { BiSearchAlt } from 'react-icons/bi';
 import { FormHandles } from '@unform/core';
@@ -11,15 +11,8 @@ import homeTwoImg from '../../assets/HomeTwo.png';
 import { Container, Process, Wrapper } from './styles';
 import Input from '../../components/Input';
 import getValidationErrors from '../../utils/getValidationErrors';
-import api from '../../services/api';
 import Button from '../../components/Button';
-
-interface ActParam {
-  data_dodf: string;
-  texto: string;
-  id_ato: number;
-  tipo_atos: number;
-}
+import { useProcess } from '../../hooks/useProcess';
 
 interface ContractFormData {
   contract: string;
@@ -29,7 +22,7 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const [acts, setActs] = useState<ActParam[]>([]);
+  const { addNumberProcess, loading } = useProcess();
 
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
@@ -42,12 +35,8 @@ export const Home: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
+        await addNumberProcess(data.contract);
 
-        // http://localhost:5000/atos/0010009842017
-        const response = await api.get(`/${data.contract}`);
-
-        // setActs(response.data.acts);
-        // console.log(acts);
         history.push(`/timeline/${data.contract}`);
 
         addToast({
@@ -107,7 +96,7 @@ export const Home: React.FC = () => {
               placeholder="00410-00024230/2017-06"
               icon={HiOutlineDocumentSearch}
             />
-            <Button type="submit" icon={BiSearchAlt} />
+            <Button type="submit" icon={BiSearchAlt} />;
           </Wrapper>
         </Form>
       </Process>
