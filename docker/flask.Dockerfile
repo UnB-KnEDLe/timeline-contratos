@@ -13,7 +13,7 @@ WORKDIR /app
 
 # add and install requirements
 RUN pip install --upgrade pip
-COPY ./requirements.txt /app/requirements.txt
+COPY ./backend/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # add app
