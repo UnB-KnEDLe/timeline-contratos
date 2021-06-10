@@ -10,11 +10,7 @@ services:
       - '.:/app'
     ports:
       - 5015:5000
-    environment:
-      - FLASK_ENV=development
-      - APP_SETTINGS=api.config.DevelopmentConfig
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
-      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/test
+    env_file: .env
     depends_on: 
       - db
 
@@ -24,6 +20,4 @@ services:
       dockerfile: Dockerfile-Postgres
     ports:
       - 5435:5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file: .env

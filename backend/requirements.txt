@@ -9,3 +9,4 @@ sqlalchemy
 coverage
 flask_restful
 flask_cors
+psycopg2-binary
