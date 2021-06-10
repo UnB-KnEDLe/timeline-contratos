@@ -1,5 +1,6 @@
 from api.models.atos import AtosModel, CertameModel, TipoAtoModel
 from flask import jsonify, Blueprint
+from sqlalchemy import desc
 
 atos_blueprint = Blueprint('_atos', __name__)
 
@@ -12,7 +13,8 @@ def get_act(n_processo):
     }
     try:
         acts = AtosModel.query.join(CertameModel, AtosModel.id_certame == CertameModel.id_certame).join(
-            TipoAtoModel, AtosModel.id_tipo == TipoAtoModel.id_tipo).filter(CertameModel.n_processo == n_processo).all()
+            TipoAtoModel, AtosModel.id_tipo == TipoAtoModel.id_tipo).filter(
+                CertameModel.n_processo == n_processo).order_by(desc(AtosModel.data_dodf)).all()
         if not acts:
             return response_object, 404
         else:
