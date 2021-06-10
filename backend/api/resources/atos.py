@@ -22,3 +22,12 @@ def get_act(n_processo):
             return jsonify({'acts': acts_json}), 200
     except ValueError:
         return response_object, 404
+
+@atos_blueprint.route('/acts/types', methods=['GET'])
+def get_all_type_acts():
+    """Get all acts types"""
+    response_object = {
+        'status': 'success',
+        'data': [type_acts.to_json() for type_acts in TipoAtoModel.query.all()]
+    }
+    return response_object, 200
