@@ -1,7 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship
-from sqlalchemy.dialects import postgresql
-
 
 db = SQLAlchemy()
 
@@ -9,31 +6,31 @@ db = SQLAlchemy()
 class CertameModel(db.Model):
     __tablename__ = 'certame'
     id_certame = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    processo = db.Column(db.Text, nullable=True)
+    n_processo = db.Column(db.Text, nullable=True)
 
-    def __init__(self, id_certame, processo):
+    def __init__(self, id_certame, n_processo):
         self.id_certame = id_certame
-        self.processo = processo
+        self.n_processo = n_processo
 
     def to_json(self):
         return {
             'id_certame': self.id_certame,
-            'processo': self.processo
+            'n_processo': self.n_processo
         }
 
 
 class TipoAtoModel(db.Model):
     __tablename__ = 'tipo_ato'
-    cod_ato = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_tipo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     descricao = db.Column(db.Text, nullable=True)
 
-    def __init__(self, cod_ato, descricao):
-        self.cod_ato = cod_ato
+    def __init__(self, id_tipo, descricao):
+        self.id_tipo = id_tipo
         self.descricao = descricao
 
     def to_json(self):
         return {
-            'cod_ato': self.cod_ato,
+            'id_tipo': self.id_tipo,
             'descricao': self.descricao
         }
 
@@ -44,20 +41,20 @@ class AtosModel(db.Model):
     data_dodf = db.Column(db.Text, nullable=True)
     texto = db.Column(db.Text, nullable=True)
     id_certame = db.Column(db.Integer, db.ForeignKey('certame.id_certame'))
-    cod_ato = db.Column(db.Integer, db.ForeignKey('tipo_ato.cod_ato'))
+    id_tipo = db.Column(db.Integer, db.ForeignKey('tipo_ato.id_tipo'))
 
-    def __init__(self, id_ato, data_dodf, texto, id_certame, cod_ato):
+    def __init__(self, id_ato, data_dodf, texto, id_certame, id_tipo):
         self.id_ato = id_ato
         self.data_dodf = data_dodf
         self.texto = texto
         self.id_certame = id_certame
-        self.cod_ato = cod_ato
+        self.id_tipo = id_tipo
 
     def to_json(self):
         return {
             'id_ato': self.id_ato,
             'data_dodf': self.data_dodf,
             'texto': self.texto,
-            'certames': [certame.id_certame for certame in self.id_certame],
-            'tipo_atos': [tipo_ato.cod_ato for tipo_ato in self.cod_ato]
+            'certames': self.id_certame,
+            'tipo_atos': self.id_tipo
         }

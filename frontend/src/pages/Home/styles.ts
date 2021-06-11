@@ -65,6 +65,13 @@ export const Process = styled.section`
   align-items: center;
   margin-top: 8rem;
   margin-bottom: 8rem;
+<<<<<<< HEAD
+=======
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
   h2 {
     font-size: 3rem;
     font-weight: bold;
@@ -72,3 +79,16 @@ export const Process = styled.section`
     color: var(--primary);
   }
 `;
+<<<<<<< HEAD
+=======
+
+export const Wrapper = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    margin-left: 1rem;
+  }
+`;
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb

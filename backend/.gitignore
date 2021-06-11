@@ -38,8 +38,8 @@ instance/
 .python-version
 
 # Environments
-.env
 .venv
+.env
 env/
 venv/
 ENV/

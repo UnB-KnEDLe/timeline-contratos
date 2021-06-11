@@ -1,4 +1,5 @@
 from flask.cli import FlaskGroup
+
 from api import create_app, db
 
 app = create_app()

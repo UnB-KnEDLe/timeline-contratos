@@ -70,4 +70,12 @@ export const GlobalStyle = createGlobalStyle`
     opacity: 0.6;
     cursor: not-allowed;
   }
+<<<<<<< HEAD
+=======
+
+  .loading{
+    display: flex;
+    margin: 0 auto;
+  }
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
 `;

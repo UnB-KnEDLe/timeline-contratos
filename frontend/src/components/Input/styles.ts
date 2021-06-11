@@ -14,6 +14,10 @@ export const Container = styled.section<ContainerProps>`
   /* Colocamos a bordinha que ficará vermelha */
   border: 0.3rem solid #666360;
   padding: 1rem;
+<<<<<<< HEAD
+=======
+  padding-right: 3rem;
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
   width: 100%;
   height: 7.5rem;
 
@@ -55,7 +59,11 @@ export const Container = styled.section<ContainerProps>`
     color: #000;
 
     &::placeholder {
+<<<<<<< HEAD
       color: #666360;
+=======
+      color: #cbc2c2;
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
     }
   }
 

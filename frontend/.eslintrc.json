@@ -31,6 +31,10 @@
   "rules": {
       "import/no-extraneous-dependencies": "off",
       "prettier/prettier": "error",
+<<<<<<< HEAD
+=======
+      "react/react-in-jsx-scope":"off",
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
       "react/jsx-one-expression-per-line":"off",
       "react/jsx-props-no-spreading": "off",
       "react/prop-types": "off",
@@ -42,9 +46,16 @@
       "import/no-duplicates": "off",
       "import/no-unresolved":"off",
       "@typescript-eslint/camelcase": "off",
+<<<<<<< HEAD
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/explicit-function-return-type": [
         "error",
+=======
+      "@typescript-eslint/ban-ts-ignore": "off",
+      "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/explicit-function-return-type": [
+        "off",
+>>>>>>> 602963973cae396a962cc7d45c2ad9e9ca4c9cfb
         {
           "allowExpressions": true
         }
