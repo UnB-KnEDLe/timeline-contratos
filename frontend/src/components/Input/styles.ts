@@ -24,10 +24,6 @@ export const Container = styled.section<ContainerProps>`
   display: flex;
   align-items: center;
 
-  & + div {
-    margin-top: 2rem;
-  }
-
   ${(props) =>
     props.isErrored &&
     css`

@@ -82,10 +82,13 @@ export const Wrapper = styled.section`
     margin-left: 1rem;
   }
   div {
-    svg::last-child {
-      height: 7.5rem;
-      width: 8.125rem;
-      margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1rem;
+    svg {
+      margin: 0;
+      color: var(--primary);
     }
   }
 `;

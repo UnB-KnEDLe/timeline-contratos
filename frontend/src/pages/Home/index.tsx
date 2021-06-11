@@ -41,9 +41,6 @@ export const Home: React.FC = () => {
 
         const length = await addNumberProcess(data.contract);
 
-        // await api.post('/users', data);
-
-        history.push('/');
         await addNumberProcess(data.contract);
 
         history.push(`/timeline/${data.contract}`);
@@ -114,9 +111,9 @@ export const Home: React.FC = () => {
             {load ? (
               <ReactLoading
                 color="#122145"
-                type="bubbles"
-                height="20%"
-                width="50%"
+                type="spinningBubbles"
+                height="7.5rem"
+                width="8.125rem"
               />
             ) : (
               <Button type="submit" icon={BiSearchAlt} />
