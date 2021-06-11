@@ -41,6 +41,14 @@ export const Home: React.FC = () => {
 
         const length = await addNumberProcess(data.contract);
 
+        // await api.post('/users', data);
+
+        history.push('/');
+        await addNumberProcess(data.contract);
+
+        history.push(`/timeline/${data.contract}`);
+
+
         if (length === 0) {
           throw new Error('Erro ao buscar contrato');
         } else {
@@ -56,14 +64,14 @@ export const Home: React.FC = () => {
 
           formRef.current?.setErrors(errors);
           console.log(err);
+
           return;
         }
 
         addToast({
           type: 'error',
           title: 'Erro ao processar o contrato',
-          description:
-            'Ocorreu um erro ao encontrar o contrato, tente novamente',
+          description: 'Ocorreu um erro ao encontrar o contrato, tente novamente',
         });
 
         history.push('/404');

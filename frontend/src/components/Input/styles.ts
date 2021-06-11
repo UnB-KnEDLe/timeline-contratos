@@ -16,6 +16,7 @@ export const Container = styled.section<ContainerProps>`
   padding: 1rem;
   padding-right: 3rem;
   width: 800px;
+
   height: 7.5rem;
 
   color: #666360;

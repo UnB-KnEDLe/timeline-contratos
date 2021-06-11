@@ -65,10 +65,6 @@ export const Process = styled.section`
   align-items: center;
   margin-top: 8rem;
   margin-bottom: 8rem;
-  form {
-    display: flex;
-    flex-direction: column;
-  }
   h2 {
     font-size: 3rem;
     font-weight: bold;
