@@ -6,12 +6,14 @@ import logo from '../../assets/logo.svg';
 import imageNotFound from '../../assets/withoutProcess.png';
 
 import { Container, AreaLogo, ImageNotFound } from './styles';
+import { useProcess } from '../../hooks/useProcess';
 
 export const WithoutProcess: React.FC = () => {
+  const { cleanActs } = useProcess();
   return (
     <Container>
       <AreaLogo>
-        <Link to="/">
+        <Link to="/" onClick={cleanActs}>
           <BiArrowBack size="5rem" />
         </Link>
         <img src={logo} alt="logo" />

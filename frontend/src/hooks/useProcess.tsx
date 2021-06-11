@@ -4,7 +4,6 @@ import React, {
   ReactNode,
   useContext,
   useCallback,
-  useEffect,
 } from 'react';
 import { api } from '../services/api';
 
@@ -20,9 +19,9 @@ interface ActsProps {
 }
 
 interface ProcessContextData {
-  process: string;
   acts: ActsProps[];
-  addNumberProcess(numberProcess: string): Promise<void>;
+  addNumberProcess(contract: string): any;
+  cleanActs(): Promise<void>;
   loading: boolean;
 }
 
@@ -31,24 +30,25 @@ const ProcessContext = createContext<ProcessContextData>(
 );
 
 export function ProcessProvider({ children }: ProcessProviderProps) {
-  const [process, setProcess] = useState('');
   const [loading, setLoading] = useState(true);
   const [acts, setActs] = useState<ActsProps[]>([]);
 
-  useEffect(() => {
-    api.get(`/${process}`, {}).then((response) => {
+  async function addNumberProcess(contract: string) {
+    await api.get(`/${contract}`, {}).then((response) => {
       setActs(response.data.acts);
       setLoading(false);
+      const tam = acts.length;
+      return tam;
     });
-  }, [process]);
-
-  async function addNumberProcess(contract: string) {
-    setProcess(contract);
   }
+
+  const cleanActs = useCallback(async () => {
+    setActs([]);
+  }, []);
 
   return (
     <ProcessContext.Provider
-      value={{ process, loading, acts, addNumberProcess }}
+      value={{ loading, acts, addNumberProcess, cleanActs }}
     >
       {children}
     </ProcessContext.Provider>

@@ -1,10 +1,11 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { HiOutlineDocumentSearch } from 'react-icons/hi';
 import { BiSearchAlt } from 'react-icons/bi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
+import ReactLoading from 'react-loading';
 import homeOneImg from '../../assets/homeOne.png';
 import { useToast } from '../../hooks/toast';
 import homeTwoImg from '../../assets/HomeTwo.png';
@@ -22,7 +23,8 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const { addNumberProcess, loading } = useProcess();
+  const { addNumberProcess } = useProcess();
+  const [load, setLoad] = useState(false);
 
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
@@ -35,14 +37,19 @@ export const Home: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
-        await addNumberProcess(data.contract);
+        setLoad(true);
 
-        history.push(`/timeline/${data.contract}`);
+        const length = await addNumberProcess(data.contract);
 
-        addToast({
-          type: 'success',
-          title: 'Contrato encontrado!',
-        });
+        if (length === 0) {
+          throw new Error('Erro ao buscar contrato');
+        } else {
+          history.push(`/timeline/${data.contract}`);
+          addToast({
+            type: 'success',
+            title: 'Contrato encontrado!',
+          });
+        }
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -96,7 +103,16 @@ export const Home: React.FC = () => {
               placeholder="00410-00024230/2017-06"
               icon={HiOutlineDocumentSearch}
             />
-            <Button type="submit" icon={BiSearchAlt} />;
+            {load ? (
+              <ReactLoading
+                color="#122145"
+                type="bubbles"
+                height="20%"
+                width="50%"
+              />
+            ) : (
+              <Button type="submit" icon={BiSearchAlt} />
+            )}
           </Wrapper>
         </Form>
       </Process>

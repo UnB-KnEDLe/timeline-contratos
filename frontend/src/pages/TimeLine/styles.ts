@@ -7,4 +7,10 @@ export const Container = styled.div`
     background: url(${HeaderImg});
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  p {
+    text-align: justify;
+  }
+  svg {
+    color: #2980b9;
+  }
 `;

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // @ts-ignore
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import { Link } from 'react-router-dom';
 
 import ReactLoading from 'react-loading';
+import { BiArrowBack } from 'react-icons/bi';
 import { Container } from './styles';
 import { useProcess } from '../../hooks/useProcess';
 
@@ -30,6 +32,7 @@ const colors: ColorTypes = {
   13: '#FF5C00',
   14: '#37839B',
   15: '#404040',
+  16: '#00343a',
   999: '#808080',
 };
 
@@ -49,6 +52,7 @@ const actType: ActTypes = {
   13: 'AVISO DE REABERTURA',
   14: 'AVISO DE LICITACAO',
   15: 'EXTRATOS DE CONTRATO',
+  16: 'AVISO DE ALTERAÇÃO',
   999: 'DESCONHECIDO',
 };
 
@@ -61,11 +65,14 @@ const actType: ActTypes = {
 // 0000000005000003463201965
 
 export const TimelineActs: React.FC = () => {
-  const { acts, loading } = useProcess();
+  const { acts, loading, cleanActs } = useProcess();
 
   return (
     <Container>
       <header />
+      <Link to="/" onClick={cleanActs}>
+        <BiArrowBack size="5rem" />
+      </Link>
       {loading ? (
         <ReactLoading
           color="#122145"

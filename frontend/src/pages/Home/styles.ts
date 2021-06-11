@@ -77,12 +77,19 @@ export const Process = styled.section`
   }
 `;
 
-export const Wrapper = styled.span`
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   button {
     margin-left: 1rem;
+  }
+  div {
+    svg::last-child {
+      height: 7.5rem;
+      width: 8.125rem;
+      margin-left: 1rem;
+    }
   }
 `;

@@ -15,7 +15,7 @@ export const Container = styled.section<ContainerProps>`
   border: 0.3rem solid #666360;
   padding: 1rem;
   padding-right: 3rem;
-  width: 100%;
+  width: 800px;
   height: 7.5rem;
 
   color: #666360;
@@ -24,7 +24,7 @@ export const Container = styled.section<ContainerProps>`
   align-items: center;
 
   & + div {
-    margin-top: 8px;
+    margin-top: 2rem;
   }
 
   ${(props) =>
@@ -66,19 +66,20 @@ export const Container = styled.section<ContainerProps>`
 `;
 
 export const Error = styled(Tooltip)`
-  height: 20px;
-  margin-left: 16px;
-
+  margin-left: 6rem;
   svg {
+    height: 6rem;
+    width: 6rem;
     margin: 0;
+    padding: 0;
   }
 
   span {
-    background: #c53030;
+    background: #ff0000;
     color: #fff;
 
     &::before {
-      border-color: #c53030 transparent;
+      border-color: #ff0000 transparent;
     }
   }
 `;
