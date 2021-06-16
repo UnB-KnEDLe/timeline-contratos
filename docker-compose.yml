@@ -22,9 +22,11 @@ services:
       - 5435:5432
     env_file: .env
 
-  # client:
-  #   build:
-  #     dockerfile: ./docker/react.Dockerfile
-  #     context: .
-  #   ports:
-  #     - "3000:3000"
+  client:
+    build:
+      dockerfile: ./docker/react.Dockerfile
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - './frontend:/app'
