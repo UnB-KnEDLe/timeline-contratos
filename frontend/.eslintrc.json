@@ -30,6 +30,7 @@
   ],
   "rules": {
       "import/no-extraneous-dependencies": "off",
+      "prefer-const":"off",
       "prettier/prettier": "error",
       "react/react-in-jsx-scope":"off",
       "react/jsx-one-expression-per-line":"off",

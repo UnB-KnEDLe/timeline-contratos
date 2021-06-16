@@ -26,6 +26,19 @@ export const Home: React.FC = () => {
   const { addNumberProcess } = useProcess();
   const [load, setLoad] = useState(false);
 
+  function replaceAll(str: string, find: any, replace: string) {
+    let formatedSring = str.replace(new RegExp(find, 'g'), replace);
+    if (formatedSring.length < 25) {
+      let addZeros = 25 - formatedSring.length;
+      while (addZeros !== 0) {
+        let zero = '0';
+        formatedSring = zero.concat(formatedSring);
+        addZeros -= 1;
+      }
+    }
+    return formatedSring;
+  }
+
   const handleSubmit = useCallback(
     async (data: ContractFormData) => {
       try {
@@ -39,12 +52,12 @@ export const Home: React.FC = () => {
         });
         setLoad(true);
 
-        const length = await addNumberProcess(data.contract);
+        const testContract = data.contract;
+        const formatContract = replaceAll(testContract, /[/\-\s]/, '');
 
-        await addNumberProcess(data.contract);
+        const length = await addNumberProcess(formatContract);
 
-        history.push(`/timeline/${data.contract}`);
-
+        history.push(`/timeline/${formatContract}`);
 
         if (length === 0) {
           throw new Error('Erro ao buscar contrato');
@@ -68,13 +81,14 @@ export const Home: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro ao processar o contrato',
-          description: 'Ocorreu um erro ao encontrar o contrato, tente novamente',
+          description:
+            'Ocorreu um erro ao encontrar o contrato, tente novamente',
         });
 
         history.push('/404');
       }
     },
-    [addToast, history]
+    [addToast, history, addNumberProcess]
   );
   return (
     <Container>
