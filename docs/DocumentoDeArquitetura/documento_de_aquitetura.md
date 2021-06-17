@@ -1,7 +1,7 @@
 <h1 style="text-align: center">Documento de Arquitetura de Software</h1>
 <br />
 <div style="display: flex; justify-content: center; align-items:center;">
-    <img src="../assets/icons/house.png">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/icons/house.png">
 </div>
 <br />
 
