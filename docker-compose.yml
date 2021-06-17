@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: ./docker/flask.Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 5015:5000
+    env_file: .env
+    depends_on: 
+      - db
+
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/postgres.Dockerfile
+    ports:
+      - 5435:5432
+    env_file: .env
+
+  client:
+    build:
+      dockerfile: ./docker/react.Dockerfile
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - './frontend:/app'

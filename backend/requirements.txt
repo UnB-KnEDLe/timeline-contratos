@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+Flask-Testing
+Flask-Migrate
+black
+gunicorn
+sqlalchemy
+coverage
+flask_restful
+flask_cors
+psycopg2-binary
