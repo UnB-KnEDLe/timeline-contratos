@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>KnEDLe Contracts</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,7 +13,9 @@
   <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' rel='stylesheet'>
 
   <style>
-
+    a {
+      text-decoration: none !important;
+    }
     html{
       scroll-behavior: smooth;
     }
@@ -33,17 +35,29 @@
       background: #2980B9;
     }
 
-    a {
+    
+
+    .title_div a {
+      padding-left: 5px !important;
+      color: #000 !important;
+      webkit-transition: all 0.3s ease-out !important;
+      -o-transition: all .3s ease-out !important;
+      transition: all .3s ease-out !important;
+      text-decoration: 0 !important;
+    }
+
+    .sidebar a {
       padding-left: 5px !important;
       color: #fcfcfc !important;
       webkit-transition: all 0.3s ease-out !important;
       -o-transition: all .3s ease-out !important;
       transition: all .3s ease-out !important;
-      text-decoration: none !important;
+      text-decoration: 0 !important;
     }
-    
-    a:hover {
+
+    .sidebar a:hover {
       color: #00365a !important;
+      text-decoration: 0 !important;
     }
 
     .section-link {
@@ -52,6 +66,7 @@
       -moz-transition: all .3s ease-out !important;
       -o-transition: all .3s ease-out !important;
       transition: all .3s ease-out !important;
+      text-decoration: none !important;
     }
 
 
@@ -172,9 +187,9 @@
     }
 
     .nav-custom-css-item:hover{
-      color: rgba(255, 255, 255, 0.733) !important; 
-      background: #898989 !important; 
-      border: 1px solid #898989;
+      color: #00365a !important; 
+      background: #00365a !important; 
+      border: 1px solid #00365a;
     }
 
 
@@ -232,8 +247,8 @@
 	  autoHeader: true,
 	  loadSidebar: true,
 	  subMaxLevel: 3,
-      name: 'SYA',
-      repo: 'https://github.com/UnBArqDsw/2020.1_G11_SYA/tree/mkdocs'
+      name: 'KnEDLE',
+      repo: 'https://github.com/UnB-KnEDLe/timeline-contratos/tree/develop'
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
