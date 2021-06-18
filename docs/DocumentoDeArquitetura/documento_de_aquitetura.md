@@ -68,9 +68,38 @@ O software deve rodar nos navegadores mais populares entre os usuários, como Mo
 
 * <p align="justify">Manutenibilidade, no sentido de que o código deve estar devidamente documentado, para ser tornar fácil sua futura manutenção ou modificação.</p>
 
-## Histórico de Versõess
+## 4 Visão de Casos de Uso
+<p align="justify">O Diagrama de Casos de Uso tem o objetivo de descrever as principais funcionalidades que o software terá.</p>
+
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="../assets/user_case_one.png">
+</div>
+<br />
+
+Caso de Uso | Ator | Descrição
+---- | ----------- | ------ |
+<strong>UC1</strong> - Digitar um número de processo | <strong>Usuário</strong>| <p align="justify">Caso de uso que ocorre quando o usuário decide digitar um número de processo referente a uma licitação</p>|
+<strong>UC2</strong> - Visualizar a linha de tempo | <strong>Usuário</strong> | <p align="justify">Caso de uso que ocorre após o usuário digitar um número de processo, assim, ele consegue visualizar uma linha do tempo dos atos de licitação referentes àquele número de processo digitado</p>|
+
+## 5 Visão de Implementação
+
+### 5.1 Visão Geral
+<p align="justify">A Visão de Implementação mostra como, de fato, o sistema proposto será implementado.</p>
+
+### 5.2 Diagrama de Entidade Relacionamento
+
+## 6 Tamanho e Desempenho
+### 6.1 Visão Geral
+<p align="justify">Descreve os principais objetivos de desempenho do software assim como as principais características de dimensionamento do software que impactam na arquitetura do aplicativo.</p>
+
+### 6.2 Requisitos Mínimos
+* <p align="justify">Sistemas operacionais: Windows, macOS e Linux.</p>
+* <p align="justify">É necessário possuir internet para utilizar o Software.</p>
+* <p align="justify">O ambiente de desenvolvimento deve funcionar tanto em Windows, Linux e MacOS.</p>
+
+## Histórico de Versões
 
 Data | Versão | Descrição | Autor(es) 
 ---- | ----------- | ------ | ---------
 25/05/2021 | 1.0 | Adicionando tópicos | [@dansousamelo](http://github.com/dansousamelo)|
-25/05/2021 | 1.0 | Adicionando tópicos 1 a 2.2.3 | [@dansousamelo](http://github.com/dansousamelo), [@guilherme-mendes](http://github.com/guilherme-mendes), [@Thais-ra](http://github.com/Thais-ra) e [@IanFPFerreira](http://github.com/IanFPFerreira)|
+25/05/2021 | 1.1 | Adicionando tópicos 1 a 6.2 | [@dansousamelo](http://github.com/dansousamelo), [@guilherme-mendes](http://github.com/guilherme-mendes), [@Thais-ra](http://github.com/Thais-ra) e [@IanFPFerreira](http://github.com/IanFPFerreira)|
