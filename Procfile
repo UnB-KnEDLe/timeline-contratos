@@ -1,0 +1,1 @@
+web: gunicorn manage:'create_app()'
