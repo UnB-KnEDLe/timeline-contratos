@@ -72,7 +72,7 @@ O software deve rodar nos navegadores mais populares entre os usuários, como Mo
 <p align="justify">O Diagrama de Casos de Uso tem o objetivo de descrever as principais funcionalidades que o software terá.</p>
 
 <div style="display: flex; justify-content: center; align-items:center;">
-    <img src="../assets/user_case_one.png">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/user_case_one.png">
 </div>
 <br />
 
