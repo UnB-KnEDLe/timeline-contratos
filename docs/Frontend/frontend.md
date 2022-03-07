@@ -22,10 +22,10 @@
 </div>
 <p align="justify">Feito isso basta acessar o <a href="http://localhost:3000/timeline"><b><i>localhost</i></b><a> em um navegador de sua preferência.</p>
 
-## 2. Páginas
+## 3. Páginas
 <p align="justify">A aplicação possui 3 páginas apenas, são elas: <b><i>Home</i></b>, <b><i>Timeline</i></b> e <b><i>WithoutProcess</i></b>. Os nomes são auto sugestivos.</p>
 
-### 2.1. Home
+### 3.1. Home
 <p align="justify">A página Home é página inicial do projeto, ela é formada por 2 principais componentes como mostra na imagem abaixo.</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/05.png">
@@ -41,18 +41,23 @@
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/07.png">
 </div>
 
-### 2.1. Timeline
+### 3.2. Timeline
 <p align="justify">Para criação da Timeline foi preciso a utilização da biblioteca <b><i>vertical-timeline-component-for-react</i></b> em sua versão <b><i>1.0.7</i></b>, abaixo está representado o principal componente da página.</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/08.png">
 </div>
 
-### 2.1. WithoutProcess
+### 3.3. WithoutProcess
 <p align="justify">A página <b><i>WithoutProcess</i></b> é exibida em tela quando a api não encontrar atos que foram pesquisados pelo usuário, a página é relativamente simples.</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/09.png">
 </div>
-## Histórico de Versões
+
+## 4.Componentes
+
+## 5.Conexão com o Back-end
+
+## 6.Contexts
 
 Data | Versão | Descrição | Autor(es) 
 ---- | ----------- | ------ | ---------
