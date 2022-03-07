@@ -10,24 +10,40 @@
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/02.png">
 </div>
-<br />
 
 ## 2. Inicializando aplicação
 <p align="justify">Para iniciar a aplicação, basta clonar o repositório do projeto em <a href="https://gitlab.com/gpam/services/timeline-contratos.git"><b><i>timeline-contratos</b></i></a> ou então via SSH git@gitlab.com:gpam/services/timeline-contratos.git. Feito isso iremos instalar as dependências com o comando abaixo:</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/03.png">
 </div>
-<br />
 <p align="justify">Com as dependências instaladas basta executar a aplicação com o comando:</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/04.png">
 </div>
-<br />
 <p align="justify">Feito isso basta acessar o <a href="http://localhost:3000/timeline"><b><i>localhost</i></b><a> em um navegador de sua preferência.</p>
 
 ## 2. Páginas
 <p align="justify">A aplicação possui 3 páginas apenas, são elas: <b><i>Home</i></b>, <b><i>Timeline</i></b> e <b><i>WithoutProcess</i></b>. Os nomes são auto sugestivos.</p>
 
+### 2.1. Home
+<p align="justify">A página Home é página inicial do projeto, ela é formada por 2 principais componentes como mostra na imagem abaixo.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/05.png">
+</div>
+
+<p align="justify">O primeiro componente, <b><i>AnimationDiv</i></b>, é responsável por pesquisar somente utilizando um número de um processo específico, vale lembrar que existe uma <b><i>div animada</i></b> em volta desse componente.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/06.png">
+</div>
+
+<p align="justify">Já o segundo componente é responsável pela <b><i>Busca Avançada</i></b>.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/07.png">
+</div>
+
+### 2.1. Timeline
+
+### 2.1. WithoutProcess
 
 ## Histórico de Versões
 
