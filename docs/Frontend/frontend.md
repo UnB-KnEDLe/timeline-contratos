@@ -42,11 +42,18 @@
 </div>
 
 ### 2.1. Timeline
+<p align="justify">Para criação da Timeline foi preciso a utilização da biblioteca <b><i>vertical-timeline-component-for-react</i></b> em sua versão <b><i>1.0.7</i></b>, abaixo está representado o principal componente da página.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/08.png">
+</div>
 
 ### 2.1. WithoutProcess
-
+<p align="justify">A página <b><i>WithoutProcess</i></b> é exibida em tela quando a api não encontrar atos que foram pesquisados pelo usuário, a página é relativamente simples.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/09.png">
+</div>
 ## Histórico de Versões
 
 Data | Versão | Descrição | Autor(es) 
 ---- | ----------- | ------ | ---------
-07/03/2022 | 1.0 | Adicionando tópicos 1, 2, 3| [@dansousamelo](http://github.com/dansousamelo)|
+07/03/2022 | 1.0 | Adicionando tópicos 1 e 2| [@dansousamelo](http://github.com/dansousamelo)|
