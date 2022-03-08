@@ -53,12 +53,62 @@
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/09.png">
 </div>
 
-## 4.Componentes
+## 4. Componentes
+<p align="justify">A coração da estrutura do Front-end encontra-se na pasta <b>src</b>, e dentro dela temos diversas outras pastas, como podemos ver abaixo.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/10.png">
+</div>
+<p align="justify">Vamos entender do que se trata cada pasta desse Front-end, os outros arquivos serão comentados em futuras sessões.</p>
+<ul>
+    <li><h3>assets</h3> Trata-se de todos os arquivos de imagem que a aplicação consome, com exceção dos ícones, esses são utilizados por meio de bibliotecas exteriores.</li>
+    <li><h3>components</h3> Trata-se de todos os componentes que são utilizados para auxiliar na contrução das páginas.</li>
+    <li><h3>hooks</h3> Trata-se de dados que serão utilizados por todo o código, utiliza-se o conceito de <b>context</b>, mais abaixo será melhor explicado.</li>
+    <li><h3>pages</h3> Trata-se de todos as páginas disponíveis no sistema.</li>
+    <li><h3>services</h3> Trata-se de arquivos responsáveis por se conectar com a api externa.</li>
+    <li><h3>styles</h3> Trata-se de arquivos de estilização global.</li>
+    <li><h3>utils</h3> Trata-se de funções específicas que auxiliam em partes específicas do código.</li>
+</ul>
 
-## 5.Conexão com o Back-end
+<p align="justify">Nessa sessão iremos entender os principais componentes da aplicação, na imagem abaixo conseguimos ver todos eles.</p>
 
-## 6.Contexts
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/11.png">
+</div>
+
+### ActType
+Esse componente se conecta com o banco de dados para pegar informações sobre quais os tipos de ato o usuário poderá escolher na busca avançada.
+
+### AdvancedFilter
+Componente responsável por renderizar a busca avançada em tela.
+
+### Button
+Componente responsável por renderizar os botões em tela.
+
+### IconsAnimation
+Componente responsável por renderizar as animações dos ícones na <b>Home</b> do projeto.
+
+### Input
+Componente resposável por pegar e validar informações provindas do nosso usuário.
+
+### ToastContainer
+Componente responsável por exibir mensagem de sucesso, erro e informações genéricas para o usuário quando esse conclui alguma etapa dentro do sistema.
+
+### Tooltip
+Componente responsável por mostrar erros em tela para o usuário
+
+</br>
+</br>
+<p align="justify">Para exemplificar o gif abaixo mostra todos os componentes devidamente renderizados em tela.</p>
+
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/12.gif">
+</div>
+
+## 5. Conexão com o Back-end
+
+## 6. Contexts
 
 Data | Versão | Descrição | Autor(es) 
 ---- | ----------- | ------ | ---------
 07/03/2022 | 1.0 | Adicionando tópicos 1 e 2| [@dansousamelo](http://github.com/dansousamelo)|
+08/03/2022 | 1.0 | Adicionando tópicos 4 e 5| [@dansousamelo](http://github.com/dansousamelo)|
