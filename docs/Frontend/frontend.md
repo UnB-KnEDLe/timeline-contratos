@@ -116,10 +116,22 @@ Componente responsável por mostrar erros em tela para o usuário
 ## 6. Contexts
 <p align="justify"><b>Context</b> é um conceito que cresceu muito nos últimos anos na comunidade <b>React.js</b>, esse é responsável por exibir dados em qualquer lugar da aplicação. Dentro da pasta <b>hooks</b> temos um <b>index</b>, esse gerencia os contexts, elém disso temos também 3 outros contexts: <b>toast</b>, <b>useAdvancedSearch</b> e <b>useProcess</b>.</p>
 
-### toast
+### 6.1. toast
 <p align="justify">Responsável por renderizar mensagens de status após algum processo de falha ou sucesso, por exemplo. Podemos adicionar funcionalidades que modificam a funicionalidade desses.</p>
 <div style="display: flex; justify-content: center; align-items:center;">
     <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/14.png">
+</div>
+
+### 6.2. useAdvancedSearch
+<p align="justify">Responsável por garantir uma busca avançada efetiva, esse também se conecta com o banco para poder buscar os parâmetros de filtro que o usuário estabeleceu, basta ver a imagem abaixo.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/15.png">
+</div>
+
+### 6.3. useProcess
+<p align="justify">Responsável por adicionar tipo aos parâmetros de um ato, assim como é responsável por uma série de funções que auxiliam na manipulação desses. Abaixo conseguimos ver a função responsável por salvar atos provenientes do back-end através de um número de um processo forncecido pelo usuário.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/16.png">
 </div>
 
 Data | Versão | Descrição | Autor(es) 
