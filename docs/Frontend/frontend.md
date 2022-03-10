@@ -105,10 +105,25 @@ Componente responsável por mostrar erros em tela para o usuário
 </div>
 
 ## 5. Conexão com o Back-end
+<p align="justify">Para se conectar com o back end utilizamos a biblioteca axios para poder fazer a conexão com a api. O arquivo responsável por fazer isso se encontra dentro da pasta <b>src</b>, na subpasta <b>service</b>.</p>
+
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/13.png">
+</div>
+
+</p>Acima podemos ver uma URL comentada, essa é usada se quisermos utilizar o banco em localhost.</p>
 
 ## 6. Contexts
+<p align="justify"><b>Context</b> é um conceito que cresceu muito nos últimos anos na comunidade <b>React.js</b>, esse é responsável por exibir dados em qualquer lugar da aplicação. Dentro da pasta <b>hooks</b> temos um <b>index</b>, esse gerencia os contexts, elém disso temos também 3 outros contexts: <b>toast</b>, <b>useAdvancedSearch</b> e <b>useProcess</b>.</p>
+
+### toast
+<p align="justify">Responsável por renderizar mensagens de status após algum processo de falha ou sucesso, por exemplo. Podemos adicionar funcionalidades que modificam a funicionalidade desses.</p>
+<div style="display: flex; justify-content: center; align-items:center;">
+    <img src="https://unb-knedle.github.io/timeline-contratos/assets/Frontend/14.png">
+</div>
 
 Data | Versão | Descrição | Autor(es) 
 ---- | ----------- | ------ | ---------
 07/03/2022 | 1.0 | Adicionando tópicos 1 e 2| [@dansousamelo](http://github.com/dansousamelo)|
-08/03/2022 | 1.0 | Adicionando tópicos 4 e 5| [@dansousamelo](http://github.com/dansousamelo)|
+08/03/2022 | 1.1 | Adicionando tópicos 4| [@dansousamelo](http://github.com/dansousamelo)|
+09/03/2022 | 1.2 | Adicionando tópicos 5 e 6| [@dansousamelo](http://github.com/dansousamelo)|
