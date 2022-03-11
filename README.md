@@ -1,4 +1,10 @@
-# Timeline Contratos
+<img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge&logo=appveyor&color=%3Cblue%3E"> <img src="https://img.shields.io/github/issues/UnB-KnEDLe/timeline-contratos?style=for-the-badge&logo=appveyor&color=%3Cblue%3E"> <img src="https://img.shields.io/github/stars/UnB-KnEDLe/timeline-contratos?style=for-the-badge&logo=appveyor&color=%3Cblue%3E"> <img src="https://img.shields.io/github/forks/UnB-KnEDLe/timeline-contratos?style=for-the-badge&logo=appveyor&color=%3Cblue%3E">
+</br>
+</br>
+<p align="center"><img src="https://user-images.githubusercontent.com/48137972/157878107-81c8898d-8bd8-4838-a788-28dab929dbaa.png"></p>
+
+
+
 
 ## Sobre
 Tendo em vista o propósito do projeto KnEDLe uma nova ferramenta será desenvolvida para agregar ainda mais, trata-se de uma visualização de uma linha do tempo de um processo licitatório para auxiliar na auditoria de processos.
