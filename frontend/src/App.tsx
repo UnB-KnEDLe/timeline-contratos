@@ -11,9 +11,10 @@ export const App: React.FC = () => {
   return (
     <Router>
       <AppProvider>
-        <Router>
+        <Router basename='/timeline'>
           <Route path="/" exact component={Home} />
-          <Route path="/timeline/:contract" component={TimelineActs} />
+
+          <Route path="/acts" component={TimelineActs} />
           <Route path="/404" component={WithoutProcess} />
         </Router>
       </AppProvider>

@@ -18,7 +18,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = ({
+const InputVariation: React.FC<InputProps> = ({
   name,
   colorError,
   containerStyle = {},
@@ -73,4 +73,4 @@ const Input: React.FC<InputProps> = ({
     </Container>
   );
 };
-export default Input;
+export default InputVariation;

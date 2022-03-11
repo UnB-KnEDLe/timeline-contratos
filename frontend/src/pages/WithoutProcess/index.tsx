@@ -3,7 +3,7 @@ import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import imageNotFound from '../../assets/withoutProcess.png';
+import imageNotFound from '../../assets/withoutProcess.svg';
 
 import { Container, AreaLogo, ImageNotFound } from './styles';
 import { useProcess } from '../../hooks/useProcess';

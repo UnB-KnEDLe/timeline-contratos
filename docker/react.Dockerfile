@@ -1,13 +1,11 @@
-FROM node:14
-
+FROM node:lts-alpine as build-deps
 WORKDIR /app
-
 COPY ./frontend /app
+RUN apk update \
+    && apk add --no-cache git \
+    && yarn \
+    && yarn build
 
-RUN yarn install
-
-RUN yarn build
-
-RUN yarn global add serve
-
-CMD ["serve", "-p", "3000", "-s", "./build/"]
+FROM nginx
+COPY --from=build-deps /app/build /var/www/timeline
+COPY ./frontend/nginx.conf /etc/nginx/nginx.conf

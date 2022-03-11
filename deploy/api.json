@@ -1,0 +1,161 @@
+{
+
+    "actions": {
+        "pause": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api?action=pause",
+        "redeploy": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api?action=redeploy",
+        "resume": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api?action=resume",
+        "rollback": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api?action=rollback"
+    },
+    "annotations": {
+        "cattle.io/timestamp": "2021-07-13T20:15:46Z"
+    },
+    "baseType": "workload",
+    "containers": [
+        {
+            "allowPrivilegeEscalation": false,
+            "environment": {
+                "APP_SETTINGS": "api.config.DevelopmentConfig",
+                "DATABASE_URL": "postgresql+psycopg2://seyjlcnrbrpron:2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15@ailab.unb.br:5432/d68hhktm17dpvi",
+                "FLASK_ENV": "development",
+                "POSTGRES_PASSWORD": "2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15",
+                "POSTGRES_USER": "seyjlcnrbrpron"
+            },
+            "image": "registry.gitlab.com/gpam/services/timeline-contratos/api:<VERSION>",
+            "imagePullPolicy": "Always",
+            "initContainer": false,
+            "name": "api",
+            "ports": [
+                {
+                    "containerPort": 5000,
+                    "dnsName": "api-nodeport",
+                    "hostPort": 0,
+                    "kind": "NodePort",
+                    "name": "5000tcp310531",
+                    "protocol": "TCP",
+                    "sourcePort": 31053,
+                    "type": "/v3/project/schemas/containerPort"
+                }
+            ],
+            "privileged": false,
+            "readOnly": false,
+            "resources": {
+                "type": "/v3/project/schemas/resourceRequirements"
+            },
+            "restartCount": 0,
+            "runAsNonRoot": false,
+            "stdin": true,
+            "stdinOnce": false,
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "tty": true,
+            "type": "/v3/project/schemas/container"
+        }
+    ],
+    "created": "2021-06-21T18:44:30Z",
+    "createdTS": 1624301070000,
+    "creatorId": null,
+    "deploymentConfig": {
+        "maxSurge": 1,
+        "maxUnavailable": 0,
+        "minReadySeconds": 0,
+        "progressDeadlineSeconds": 600,
+        "revisionHistoryLimit": 10,
+        "strategy": "RollingUpdate"
+    },
+    "deploymentStatus": {
+        "availableReplicas": 1,
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-06-21T18:44:30Z",
+                "lastTransitionTimeTS": 1624301070000,
+                "lastUpdateTime": "2021-07-13T20:16:19Z",
+                "lastUpdateTimeTS": 1626207379000,
+                "message": "ReplicaSet \"api-64bf47b7cb\" has successfully progressed.",
+                "reason": "NewReplicaSetAvailable",
+                "status": "True",
+                "type": "Progressing"
+            },
+            {
+                "lastTransitionTime": "2021-07-21T19:23:23Z",
+                "lastTransitionTimeTS": 1626895403000,
+                "lastUpdateTime": "2021-07-21T19:23:23Z",
+                "lastUpdateTimeTS": 1626895403000,
+                "message": "Deployment has minimum availability.",
+                "reason": "MinimumReplicasAvailable",
+                "status": "True",
+                "type": "Available"
+            }
+        ],
+        "observedGeneration": 20,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "type": "/v3/project/schemas/deploymentStatus",
+        "unavailableReplicas": 0,
+        "updatedReplicas": 1
+    },
+    "dnsPolicy": "ClusterFirst",
+    "hostIPC": false,
+    "hostNetwork": false,
+    "hostPID": false,
+    "id": "deployment:timeline-contratos:api",
+    "imagePullSecrets": [
+        {
+            "name": "gitlab",
+            "type": "/v3/project/schemas/localObjectReference"
+        }
+    ],
+    "labels": {
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-api"
+    },
+    "links": {
+        "remove": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api",
+        "revisions": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api/revisions",
+        "self": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api",
+        "update": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api",
+        "yaml": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:api/yaml"
+    },
+    "name": "api",
+    "namespaceId": "timeline-contratos",
+    "paused": false,
+    "projectId": "c-swbsl:p-s6kdf",
+    "publicEndpoints": [
+        {
+            "addresses": [
+                "172.16.1.26"
+            ],
+            "allNodes": true,
+            "ingressId": null,
+            "nodeId": null,
+            "podId": null,
+            "port": 31053,
+            "protocol": "TCP",
+            "serviceId": "timeline-contratos:api-nodeport"
+        }
+    ],
+    "restartPolicy": "Always",
+    "scale": 1,
+    "scheduling": {
+        "scheduler": "default-scheduler"
+    },
+    "selector": {
+        "matchLabels": {
+            "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-api"
+        },
+        "type": "/v3/project/schemas/labelSelector"
+    },
+    "state": "active",
+    "terminationGracePeriodSeconds": 30,
+    "transitioning": "no",
+    "transitioningMessage": "",
+    "type": "deployment",
+    "uuid": "fe275b29-697b-468d-aa8f-0c380e92f9cd",
+    "workloadAnnotations": {
+        "deployment.kubernetes.io/revision": "4",
+        "field.cattle.io/creatorId": "u-tpzc7"
+    },
+    "workloadLabels": {
+        "cattle.io/creator": "norman",
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-api"
+    }
+
+}

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import Tooltip from '../Tooltip';
+import TooltipVariation from '../TooltipVariation';
 
 interface ContainerProps {
   isFocused: boolean;
@@ -60,11 +60,10 @@ export const Container = styled.section<ContainerProps>`
   }
 `;
 
-export const Error = styled(Tooltip)`
-  margin-left: 6rem;
+export const Error = styled(TooltipVariation)`
   svg {
-    height: 6rem;
-    width: 6rem;
+    height: 3.5rem;
+    width: 3.5rem;
     margin: 0;
     padding: 0;
   }

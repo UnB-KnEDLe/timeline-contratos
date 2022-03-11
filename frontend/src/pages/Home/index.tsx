@@ -6,14 +6,24 @@ import { Form } from '@unform/web';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import ReactLoading from 'react-loading';
-import homeOneImg from '../../assets/homeOne.png';
 import { useToast } from '../../hooks/toast';
-import homeTwoImg from '../../assets/HomeTwo.png';
-import { Container, Process, Wrapper } from './styles';
-import Input from '../../components/Input';
+import homeTwoImg from '../../assets/homeTwo.svg';
+import {
+  Container,
+  Process,
+  Wrapper,
+  Text,
+  GlobalStyleModified,
+  AdvancedButton,
+  InitialInformation,
+  AnimationDiv,
+} from './styles';
+import Input from '../../components/InputHome';
+import AdvancedFilter from '../../components/AdvancedFilter';
 import getValidationErrors from '../../utils/getValidationErrors';
 import Button from '../../components/Button';
 import { useProcess } from '../../hooks/useProcess';
+import IconsAnimation from '../../components/IconsAnimation';
 
 interface ContractFormData {
   contract: string;
@@ -23,7 +33,7 @@ export const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const { addNumberProcess } = useProcess();
+  const { addNumberProcess, addProcess, search, changeSearch } = useProcess();
   const [load, setLoad] = useState(false);
 
   function replaceAll(str: string, find: any, replace: string) {
@@ -53,21 +63,20 @@ export const Home: React.FC = () => {
         setLoad(true);
 
         const testContract = data.contract;
-        const formatContract = replaceAll(testContract, /[/\-\s]/, '');
+        const formatContract = replaceAll(testContract, /[/.-\sA-Za-z]/, '');
 
-        const length = await addNumberProcess(formatContract);
+        await addProcess(formatContract);
+        // 0000000000000010010472010
+        // 001-001.047/2010
 
-        history.push(`/timeline/${formatContract}`);
+        await addNumberProcess(formatContract);
 
-        if (length === 0) {
-          throw new Error('Erro ao buscar contrato');
-        } else {
-          history.push(`/timeline/${data.contract}`);
-          addToast({
-            type: 'success',
-            title: 'Contrato encontrado!',
-          });
-        }
+        addToast({
+          type: 'success',
+          title: 'Contrato encontrado!',
+        });
+
+        history.push(`/acts`);
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -88,53 +97,70 @@ export const Home: React.FC = () => {
         history.push('/404');
       }
     },
-    [addToast, history, addNumberProcess]
+    [addToast, history, addNumberProcess, addProcess]
   );
+
   return (
-    <Container>
-      <header />
-      <div>
-        <img src={homeOneImg} alt="Man with contracts" />
-        <div>
-          <h2>Contratos</h2>
-          <p>
-            Veja aqui a linha do tempo de um processo licitatório do DODF de uma
-            forma rápida e simples.
-          </p>
-        </div>
-      </div>
-      <span>
-        <div>
-          <h2>Auditoria</h2>
-          <p>
-            Veja todas as etapas do procedimento desde o aviso de abertura até o
-            aviso de declaração de vencedor.
-          </p>
-        </div>
-        <img src={homeTwoImg} alt="Woman drinking coffe" />
-      </span>
-      <Process>
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h2>Digite o número do processo</h2>
-          <Wrapper>
-            <Input
-              name="contract"
-              placeholder="00410-00024230/2017-06"
-              icon={HiOutlineDocumentSearch}
-            />
-            {load ? (
-              <ReactLoading
-                color="#122145"
-                type="spinningBubbles"
-                height="7.5rem"
-                width="8.125rem"
-              />
-            ) : (
-              <Button type="submit" icon={BiSearchAlt} />
-            )}
-          </Wrapper>
-        </Form>
-      </Process>
-    </Container>
+    <>
+      <Container direction={search}>
+        <InitialInformation>
+          <img src={homeTwoImg} alt="Logo" />
+          <h1>
+            Licitações
+            <br />
+            de um jeito
+            <br />
+            simples
+          </h1>
+        </InitialInformation>
+
+        {!search ? (
+          <AnimationDiv>
+            <Text>
+              <p>
+                Veja todas as etapas do
+                <br /> procedimento
+                <br /> de um <b>processo licitatório</b>
+                <br />
+                através de uma <b>timeline</b>.
+              </p>
+            </Text>
+            <Process>
+              <Form ref={formRef} onSubmit={handleSubmit}>
+                <h2>Digite o número do processo</h2>
+                <Wrapper>
+                  <Input
+                    name="contract"
+                    pattern="[0-9]*"
+                    placeholder="00410-00024230/2017-06"
+                    icon={HiOutlineDocumentSearch}
+                    colorError="#c53030"
+                  />
+                  {load ? (
+                    <ReactLoading
+                      color="#122145"
+                      type="spinningBubbles"
+                      height="5rem"
+                      width="5rem"
+                      className="load"
+                    />
+                  ) : (
+                    <Button type="submit" icon={BiSearchAlt} />
+                  )}
+                </Wrapper>
+                <AdvancedButton type="button" onClick={() => changeSearch()}>
+                  Busca Avançada
+                </AdvancedButton>
+              </Form>
+            </Process>
+          </AnimationDiv>
+        ) : (
+          <AdvancedFilter />
+        )}
+
+        <IconsAnimation />
+      </Container>
+      <GlobalStyleModified />
+    </>
   );
 };

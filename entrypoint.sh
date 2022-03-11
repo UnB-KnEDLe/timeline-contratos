@@ -8,4 +8,5 @@ done
 
 echo "PostgreSQL started"
 
-python backend/manage.py run -h 0.0.0.0
+cd ./backend/
+waitress-serve --call --port=5001 api:create_app

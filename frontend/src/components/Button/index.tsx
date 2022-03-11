@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
   <Container type="button" {...rest}>
     {loading ? 'Carregando...' : children}
-    {Icon && <Icon size="3rem" />}
+    {Icon && <Icon size="1.88rem" />}
   </Container>
 );
 export default Button;

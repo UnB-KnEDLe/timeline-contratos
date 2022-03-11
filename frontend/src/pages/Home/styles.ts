@@ -1,93 +1,112 @@
-import styled from 'styled-components';
-import HeaderImg from '../../assets/header.svg';
+import styled, { createGlobalStyle, css, keyframes } from 'styled-components';
+import { shade } from 'polished';
 
-export const Container = styled.div`
-  header {
-    height: 11.5rem;
-    background: url(${HeaderImg});
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+interface ContainerProps {
+  direction: boolean;
+}
+export const GlobalStyleModified = createGlobalStyle`
+    :root{
+      overflow: hidden;
+      }
+`;
+
+const appearFromLeft = keyframes`
+  from{
+    opacity: 0;
+    transform: translateX(-50px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  div {
-    img {
-      padding-top: 1rem;
-    }
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: left;
+`;
 
-    div {
+export const AnimationDiv = styled.div`
+  animation: ${appearFromLeft} 1s;
+`;
+
+export const InitialInformation = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  img {
+    margin-top: 5.75rem;
+    margin-left: 4.52rem;
+    height: 3.9rem;
+    width: 16.63rem;
+  }
+
+  h1 {
+    margin-top: 5.75rem;
+    margin-left: 6.57rem;
+    font-size: 5rem;
+    color: var(--primary);
+  }
+`;
+// Inverter ! das props
+
+export const Container = styled.div<ContainerProps>`
+  ${(props) =>
+    props.direction &&
+    css`
+      display: flex;
+      justify-content: space-between;
+    `}
+
+  ${(props) =>
+    !props.direction &&
+    css`
       display: flex;
       flex-direction: column;
-      padding-left: 8rem;
-      padding-top: 8rem;
-      h2 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: var(--primary);
-      }
-      p {
-        font-size: 2rem;
-        max-width: 50rem;
-      }
-    }
-  }
-  span {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-end;
+      justify-content: space-around;
+    `}
+`;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      padding-right: 8rem;
-      padding-top: 8rem;
-      h2 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: var(--primary);
-      }
-      p {
-        font-size: 2rem;
-        max-width: 50rem;
-      }
-    }
+export const Text = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 23.375rem;
+  p {
+    font-size: 1.5rem;
   }
 `;
 
 export const Process = styled.section`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  justify-content: flex-end;
+  margin-top: 2.875rem;
+  margin-right: 14.375rem;
   h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: var(--primary);
   }
 `;
 
+export const AdvancedButton = styled.button`
+  text-decoration: none;
+  font-weight: bold;
+  background: transparent;
+  font-size: 1rem;
+  color: #999999;
+  transition: color 0.2s;
+  border: none;
+
+  &:hover {
+    color: ${shade(0.2, '#2980B9')};
+  }
+`;
+
 export const Wrapper = styled.section`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 0.5rem;
   button {
     margin-left: 1rem;
   }
   div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 1rem;
     svg {
-      margin: 0;
+      margin-left: 0;
+
       color: var(--primary);
     }
   }

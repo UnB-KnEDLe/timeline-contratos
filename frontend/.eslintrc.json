@@ -30,6 +30,11 @@
   ],
   "rules": {
       "import/no-extraneous-dependencies": "off",
+      "array-callback-return":"off",
+      "no-undef": "off",
+      "no-return-assign": "off",
+      "jsx-a11y/label-has-associated-control":"off",
+      "react/jsx-wrap-multilines":"off",
       "prefer-const":"off",
       "prettier/prettier": "error",
       "react/react-in-jsx-scope":"off",
@@ -46,6 +51,8 @@
       "@typescript-eslint/camelcase": "off",
       "@typescript-eslint/ban-ts-ignore": "off",
       "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/explicit-function-return-type": [
         "off",
         {

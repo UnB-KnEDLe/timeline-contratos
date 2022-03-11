@@ -6,21 +6,25 @@ services:
     build:
       context: .
       dockerfile: ./docker/flask.Dockerfile
+    env_file: .env
     volumes:
       - '.:/app'
     ports:
-      - 5015:5000
-    env_file: .env
+      - 5015:5001
     depends_on: 
       - db
+    networks:
+      - timeline-network
 
   db:
     build:
       context: .
       dockerfile: ./docker/postgres.Dockerfile
+    env_file: .env
     ports:
       - 5435:5432
-    env_file: .env
+    networks:
+      - timeline-network
 
   client:
     build:
@@ -28,5 +32,10 @@ services:
       context: .
     ports:
       - "3000:3000"
-    volumes:
-      - './frontend:/app'
+    networks:
+      - timeline-network
+
+networks:
+  timeline-network:
+    external: true
+    driver: bridge

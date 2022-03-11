@@ -7,7 +7,7 @@ import { ToastMessage } from '../../hooks/toast';
 import { Container } from './styles';
 
 interface ToastContainerProps {
-  messages: ToastMessage[];
+  messages?: ToastMessage[];
 }
 
 const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {

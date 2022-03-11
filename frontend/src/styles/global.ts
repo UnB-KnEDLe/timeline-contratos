@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     --primary: #2980B9;
 
 
-    --background: #FFFFFF;
+    --background: #F8F8F8;
   }
 
     /* width */
@@ -75,4 +75,225 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     margin: 0 auto;
   }
+
+  .rotate{
+    will-change: transform, opacity;
+  }
+
+  .information-act {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background: linear-gradient(90deg, var(--c1, #f6d365), var(--c2, #fda085) 51%, var(--c1, #f6d365)) var(--x, 0)/ 200%;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+ }
+
+ .svg{
+  stroke:#004E81;
+  position:absolute;
+  bottom: -100vh;
+  transform-style: preserve-3d;
+}
+
+.wrap{
+  perspective-origin: 50% 50%;
+}
+
+.svg:nth-child(1) {
+	 left: 66%;
+	 animation: raise1 19s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(-0.3) rotate(138deg);
+	 z-index: -6;
+}
+ @keyframes raise1 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(-0.3) rotate(318deg);
+	}
+}
+ .svg:nth-child(2) {
+	 left: 74%;
+	 animation: raise2 19s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(0) rotate(219deg);
+	 z-index: -5;
+}
+ @keyframes raise2 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(0) rotate(41deg);
+	}
+}
+ .svg:nth-child(3) {
+	 left: 34%;
+	 animation: raise3 16s linear infinite;
+	 animation-delay: -4s;
+	 transform: scale(0.3) rotate(182deg);
+	 z-index: -4;
+}
+ @keyframes raise3 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(0.3) rotate(219deg);
+	}
+}
+ .svg:nth-child(4) {
+	 left: 45%;
+	 animation: raise4 17s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(0.6) rotate(253deg);
+	 z-index: -3;
+}
+ @keyframes raise4 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(0.6) rotate(293deg);
+	}
+}
+ .svg:nth-child(5) {
+	 left: 27%;
+	 animation: raise5 21s linear infinite;
+	 animation-delay: -1s;
+	 transform: scale(0.9) rotate(329deg);
+	 z-index: -2;
+}
+ @keyframes raise5 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(0.9) rotate(310deg);
+	}
+}
+ .svg:nth-child(6) {
+	 left: 18%;
+	 animation: raise6 8s linear infinite;
+	 animation-delay: 0s;
+	 transform: scale(1.2) rotate(216deg);
+	 z-index: -1;
+}
+ @keyframes raise6 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(1.2) rotate(287deg);
+	}
+}
+ .svg:nth-child(7) {
+	 left: 3%;
+	 animation: raise7 15s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(1.5) rotate(284deg);
+	 z-index: 0;
+}
+ @keyframes raise7 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(1.5) rotate(128deg);
+	}
+}
+ .svg:nth-child(8) {
+	 left: 38%;
+	 animation: raise8 9s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(1.8) rotate(317deg);
+	 z-index: 1;
+}
+ @keyframes raise8 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(1.8) rotate(258deg);
+	}
+}
+ .svg:nth-child(9) {
+	 left: -1%;
+	 animation: raise9 9s linear infinite;
+	 animation-delay: -2s;
+	 transform: scale(2.1) rotate(249deg);
+	 z-index: 2;
+}
+ @keyframes raise9 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(2.1) rotate(327deg);
+	}
+}
+ .svg:nth-child(10) {
+	 left: 53%;
+	 animation: raise10 7s linear infinite;
+	 animation-delay: 0s;
+	 transform: scale(2.4) rotate(231deg);
+	 z-index: 3;
+}
+ @keyframes raise10 {
+	 to {
+		 bottom: 150vh;
+		 transform: scale(2.4) rotate(191deg);
+	}
+}
+
+.extra{
+  margin-top: 0rem;
+}
+
+.load{
+  margin-left: 1rem;
+}
+
+.checkbox {
+	 display: grid;
+	 grid-template-columns: min-content auto;
+	 grid-gap: 0.5em;
+   font-size: 1.125rem;
+
+	 color: var(--primary);
+}
+ .checkbox--disabled {
+  color: var(--primary);
+}
+ .checkbox__control {
+	 display: inline-grid;
+	 width: 1em;
+	 height: 1em;
+	 border-radius: 0.25em;
+	 border: 0.1em solid currentColor;
+}
+ .checkbox__control svg {
+	 transition: transform 0.1s ease-in 25ms;
+	 transform: scale(0);
+	 transform-origin: bottom left;
+}
+ .checkbox__input {
+	 display: grid;
+	 grid-template-areas: "checkbox";
+}
+ .checkbox__input > * {
+	 grid-area: checkbox;
+}
+ .checkbox__input input {
+	 opacity: 0;
+	 width: 1em;
+	 height: 1em;
+}
+ .checkbox__input input:focus + .checkbox__control {
+	 box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+}
+ .checkbox__input input:checked + .checkbox__control svg {
+	 transform: scale(1);
+}
+ .checkbox__input input:disabled + .checkbox__control {
+	 color: var(--primary);
+
+
+}
+
+.loadingTimeline {
+  margin-left: 56rem;
+  margin-bottom: 2.5rem;
+}
+
 `;

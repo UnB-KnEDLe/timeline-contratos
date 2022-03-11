@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #2980b9;
-  height: 7.5rem;
+  height: 5rem;
   border-radius: 1rem;
-  width: 8.125rem;
+  width: 5rem;
   /* Colocamos a bordinha que ficará vermelha */
   border: 0;
-  padding: 2rem;
+  padding: 1rem;
   color: #fff;
   font-weight: bold;
   transition: background-color 0.2s;

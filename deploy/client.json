@@ -1,0 +1,161 @@
+{
+
+    "actions": {
+        "pause": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client?action=pause",
+        "redeploy": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client?action=redeploy",
+        "resume": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client?action=resume",
+        "rollback": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client?action=rollback"
+    },
+    "annotations": {
+        "cattle.io/timestamp": "2021-07-13T21:31:15Z"
+    },
+    "baseType": "workload",
+    "containers": [
+        {
+            "allowPrivilegeEscalation": false,
+            "environment": {
+                "APP_SETTINGS": "api.config.DevelopmentConfig",
+                "DATABASE_URL": "postgresql+psycopg2://seyjlcnrbrpron:2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15@ailab.unb.br:5432/d68hhktm17dpvi",
+                "FLASK_ENV": "development",
+                "POSTGRES_PASSWORD": "2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15",
+                "POSTGRES_USER": "seyjlcnrbrpron"
+            },
+            "image": "registry.gitlab.com/gpam/services/timeline-contratos/client:<VERSION>",
+            "imagePullPolicy": "Always",
+            "initContainer": false,
+            "name": "client",
+            "ports": [
+                {
+                    "containerPort": 3000,
+                    "dnsName": "client-nodeport",
+                    "hostPort": 0,
+                    "kind": "NodePort",
+                    "name": "3000tcp321151",
+                    "protocol": "TCP",
+                    "sourcePort": 32115,
+                    "type": "/v3/project/schemas/containerPort"
+                }
+            ],
+            "privileged": false,
+            "readOnly": false,
+            "resources": {
+                "type": "/v3/project/schemas/resourceRequirements"
+            },
+            "restartCount": 0,
+            "runAsNonRoot": false,
+            "stdin": true,
+            "stdinOnce": false,
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "tty": true,
+            "type": "/v3/project/schemas/container"
+        }
+    ],
+    "created": "2021-06-21T18:45:30Z",
+    "createdTS": 1624301130000,
+    "creatorId": null,
+    "deploymentConfig": {
+        "maxSurge": 1,
+        "maxUnavailable": 0,
+        "minReadySeconds": 0,
+        "progressDeadlineSeconds": 600,
+        "revisionHistoryLimit": 10,
+        "strategy": "RollingUpdate"
+    },
+    "deploymentStatus": {
+        "availableReplicas": 1,
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-06-21T18:45:30Z",
+                "lastTransitionTimeTS": 1624301130000,
+                "lastUpdateTime": "2021-07-13T21:33:06Z",
+                "lastUpdateTimeTS": 1626211986000,
+                "message": "ReplicaSet \"client-6454b54756\" has successfully progressed.",
+                "reason": "NewReplicaSetAvailable",
+                "status": "True",
+                "type": "Progressing"
+            },
+            {
+                "lastTransitionTime": "2021-07-21T19:23:16Z",
+                "lastTransitionTimeTS": 1626895396000,
+                "lastUpdateTime": "2021-07-21T19:23:16Z",
+                "lastUpdateTimeTS": 1626895396000,
+                "message": "Deployment has minimum availability.",
+                "reason": "MinimumReplicasAvailable",
+                "status": "True",
+                "type": "Available"
+            }
+        ],
+        "observedGeneration": 20,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "type": "/v3/project/schemas/deploymentStatus",
+        "unavailableReplicas": 0,
+        "updatedReplicas": 1
+    },
+    "dnsPolicy": "ClusterFirst",
+    "hostIPC": false,
+    "hostNetwork": false,
+    "hostPID": false,
+    "id": "deployment:timeline-contratos:client",
+    "imagePullSecrets": [
+        {
+            "name": "gitlab",
+            "type": "/v3/project/schemas/localObjectReference"
+        }
+    ],
+    "labels": {
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-client"
+    },
+    "links": {
+        "remove": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client",
+        "revisions": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client/revisions",
+        "self": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client",
+        "update": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client",
+        "yaml": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:client/yaml"
+    },
+    "name": "client",
+    "namespaceId": "timeline-contratos",
+    "paused": false,
+    "projectId": "c-swbsl:p-s6kdf",
+    "publicEndpoints": [
+        {
+            "addresses": [
+                "172.16.1.26"
+            ],
+            "allNodes": true,
+            "ingressId": null,
+            "nodeId": null,
+            "podId": null,
+            "port": 32115,
+            "protocol": "TCP",
+            "serviceId": "timeline-contratos:client-nodeport"
+        }
+    ],
+    "restartPolicy": "Always",
+    "scale": 1,
+    "scheduling": {
+        "scheduler": "default-scheduler"
+    },
+    "selector": {
+        "matchLabels": {
+            "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-client"
+        },
+        "type": "/v3/project/schemas/labelSelector"
+    },
+    "state": "active",
+    "terminationGracePeriodSeconds": 30,
+    "transitioning": "no",
+    "transitioningMessage": "",
+    "type": "deployment",
+    "uuid": "d5517cee-0bd4-4e9d-94a4-d63630ab5cd3",
+    "workloadAnnotations": {
+        "deployment.kubernetes.io/revision": "6",
+        "field.cattle.io/creatorId": "u-tpzc7"
+    },
+    "workloadLabels": {
+        "cattle.io/creator": "norman",
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-client"
+    }
+
+}

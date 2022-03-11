@@ -1,0 +1,155 @@
+{
+
+    "actions": {
+        "pause": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db?action=pause",
+        "redeploy": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db?action=redeploy",
+        "resume": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db?action=resume",
+        "rollback": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db?action=rollback"
+    },
+    "annotations": {
+        "cattle.io/timestamp": "2021-07-13T20:18:00Z"
+    },
+    "baseType": "workload",
+    "containers": [
+        {
+            "allowPrivilegeEscalation": false,
+            "environment": {
+                "APP_SETTINGS": "api.config.DevelopmentConfig",
+                "DATABASE_URL": "postgresql+psycopg2://seyjlcnrbrpron:2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15@ailab.unb.br:5432/d68hhktm17dpvi",
+                "FLASK_ENV": "development",
+                "POSTGRES_DB": "d68hhktm17dpvi",
+                "POSTGRES_PASSWORD": "2e70995152d21d59b2d8d9cd343e79c51114b459c2e5891ad6eafd702a593a15",
+                "POSTGRES_USER": "seyjlcnrbrpron"
+            },
+            "image": "registry.gitlab.com/gpam/services/timeline-contratos/db:<VERSION>",
+            "imagePullPolicy": "Always",
+            "initContainer": false,
+            "name": "db",
+            "ports": [ ],
+            "privileged": false,
+            "readOnly": false,
+            "resources": {
+                "type": "/v3/project/schemas/resourceRequirements"
+            },
+            "restartCount": 0,
+            "runAsNonRoot": false,
+            "stdin": true,
+            "stdinOnce": false,
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "tty": true,
+            "type": "/v3/project/schemas/container",
+            "volumeMounts": [
+                {
+                    "mountPath": "/var/lib/postgresql/data",
+                    "name": "vol1",
+                    "readOnly": false,
+                    "type": "/v3/project/schemas/volumeMount"
+                }
+            ]
+        }
+    ],
+    "created": "2021-06-21T18:45:06Z",
+    "createdTS": 1624301106000,
+    "creatorId": null,
+    "deploymentConfig": {
+        "maxSurge": 1,
+        "maxUnavailable": 0,
+        "minReadySeconds": 0,
+        "progressDeadlineSeconds": 600,
+        "revisionHistoryLimit": 10,
+        "strategy": "RollingUpdate"
+    },
+    "deploymentStatus": {
+        "availableReplicas": 1,
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-06-21T18:45:06Z",
+                "lastTransitionTimeTS": 1624301106000,
+                "lastUpdateTime": "2021-07-13T20:18:08Z",
+                "lastUpdateTimeTS": 1626207488000,
+                "message": "ReplicaSet \"db-7476bc4c79\" has successfully progressed.",
+                "reason": "NewReplicaSetAvailable",
+                "status": "True",
+                "type": "Progressing"
+            },
+            {
+                "lastTransitionTime": "2021-07-21T19:23:24Z",
+                "lastTransitionTimeTS": 1626895404000,
+                "lastUpdateTime": "2021-07-21T19:23:24Z",
+                "lastUpdateTimeTS": 1626895404000,
+                "message": "Deployment has minimum availability.",
+                "reason": "MinimumReplicasAvailable",
+                "status": "True",
+                "type": "Available"
+            }
+        ],
+        "observedGeneration": 12,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "type": "/v3/project/schemas/deploymentStatus",
+        "unavailableReplicas": 0,
+        "updatedReplicas": 1
+    },
+    "dnsPolicy": "ClusterFirst",
+    "hostIPC": false,
+    "hostNetwork": false,
+    "hostPID": false,
+    "id": "deployment:timeline-contratos:db",
+    "imagePullSecrets": [
+        {
+            "name": "gitlab",
+            "type": "/v3/project/schemas/localObjectReference"
+        }
+    ],
+    "labels": {
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-db"
+    },
+    "links": {
+        "remove": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db",
+        "revisions": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db/revisions",
+        "self": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db",
+        "update": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db",
+        "yaml": "…/v3/project/c-swbsl:p-s6kdf/workloads/deployment:timeline-contratos:db/yaml"
+    },
+    "name": "db",
+    "namespaceId": "timeline-contratos",
+    "paused": false,
+    "projectId": "c-swbsl:p-s6kdf",
+    "publicEndpoints": [ ],
+    "restartPolicy": "Always",
+    "scale": 1,
+    "scheduling": {
+        "scheduler": "default-scheduler"
+    },
+    "selector": {
+        "matchLabels": {
+            "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-db"
+        },
+        "type": "/v3/project/schemas/labelSelector"
+    },
+    "state": "active",
+    "terminationGracePeriodSeconds": 30,
+    "transitioning": "no",
+    "transitioningMessage": "",
+    "type": "deployment",
+    "uuid": "30fe2326-e77e-4e5f-885c-11166d07e478",
+    "volumes": [
+        {
+            "hostPath": {
+                "kind": "",
+                "path": "/mnt/nas3/kubernetes_volumes/timelinecontratos/db"
+            },
+            "name": "vol1",
+            "type": "/v3/project/schemas/volume"
+        }
+    ],
+    "workloadAnnotations": {
+        "deployment.kubernetes.io/revision": "6",
+        "field.cattle.io/creatorId": "u-tpzc7"
+    },
+    "workloadLabels": {
+        "cattle.io/creator": "norman",
+        "workload.user.cattle.io/workloadselector": "deployment-timeline-contratos-db"
+    }
+}
