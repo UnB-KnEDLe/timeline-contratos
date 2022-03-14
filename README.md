@@ -28,4 +28,4 @@ $ docker-compose up --build
 > Às vezes pode ser necessário executar o comando como administrador, adicionando a palavra ```sudo``` antes dele
 Após a finalização da build, a API estará rodando e pode ser testada através da rota
 ```
-http://localhost:3000/
+http://localhost:3000/timeline
