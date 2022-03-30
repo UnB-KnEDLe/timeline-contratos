@@ -28,6 +28,9 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 2rem 10.625rem 0rem 10.625rem;
 
+  align-items: center;
+  justify-content: center;
+
   animation: ${appearFromLeft} 1s;
 
   border: 0.5rem solid var(--primary);
@@ -47,9 +50,6 @@ export const Header = styled.header`
 
   h1 {
     color: var(--background);
-    height: 6rem;
-    margin-top: 3rem;
-    margin-right: 10rem;
   }
 `;
 
@@ -64,6 +64,7 @@ export const WrapperProcessAndDate = styled.div`
   flex-direction: column;
   margin-left: 3.5rem;
   margin-bottom: 1.625rem;
+  margin-right: 7rem;
 `;
 
 export const NumberProcess = styled.div<NumberProcessProps>`
@@ -81,15 +82,6 @@ export const NumberProcess = styled.div<NumberProcessProps>`
     margin-bottom: 1rem;
   }
   section {
-    > div {
-      margin-left: 0;
-      svg {
-        height: 3rem;
-        width: 3rem;
-        padding: 0;
-      }
-    }
-
     div:last-child {
       ${(props) =>
         props.onVisibleProcess &&
@@ -127,6 +119,7 @@ export const NumberProcess = styled.div<NumberProcessProps>`
 export const DateProcess = styled.div<DateProps>`
   display: flex;
   flex-direction: column;
+
   margin-top: 1.625rem;
   span {
     display: flex;
@@ -147,19 +140,10 @@ export const DateProcess = styled.div<DateProps>`
     padding: 0rem;
 
     input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       max-width: 7.2rem;
-    }
-
-    > div {
-      margin-left: 0;
-
-      svg {
-        height: 3rem;
-        width: 3rem;
-        margin-right: 0.6rem;
-        margin-top: 0.5rem;
-        padding: 0;
-      }
     }
 
     div:last-child {
@@ -231,6 +215,7 @@ export const WrapperTypeActAndCancelConfirmButton = styled.div`
   flex: 1;
   flex-direction: column;
   width: 100%;
+  max-width: 30rem;
   margin-top: 1.625rem;
   margin-right: 3.5rem;
 `;
@@ -247,8 +232,9 @@ export const Cancel = styled.button`
   justify-content: center;
   background: #e7e7e7;
   height: 5rem;
-  border-radius: 1rem;
-  margin-left: 25rem;
+  border-radius: 0.125rem;
+  margin-left: 15rem;
+  margin-right: 2rem;
   width: 7.25rem;
   /* Colocamos a bordinha que ficará vermelha */
   border: 0;

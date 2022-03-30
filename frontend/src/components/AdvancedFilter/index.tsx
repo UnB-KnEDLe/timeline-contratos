@@ -217,6 +217,7 @@ const AdvancedFilter: React.FC = () => {
                 name="process"
                 pattern="[0-9]*"
                 placeholder="00410-00024230/2017-06"
+                errorMargin={25.5}
                 icon={HiOutlineDocumentSearch}
                 colorError={withProcess ? '#e7e7e7' : '#c53030'}
               />
@@ -260,6 +261,7 @@ const AdvancedFilter: React.FC = () => {
                   placeholder="01/01/2020"
                   icon={FaRegCalendarAlt}
                   colorError={withDate ? '#e7e7e7' : '#c53030'}
+                  errorMargin={9}
                 />
 
                 <h3>até</h3>
@@ -270,6 +272,7 @@ const AdvancedFilter: React.FC = () => {
                   placeholder="01/05/2021"
                   icon={FaRegCalendarAlt}
                   colorError={withDate ? '#e7e7e7' : '#c53030'}
+                  errorMargin={9}
                 />
               </span>
               <CheckDate>
@@ -278,10 +281,12 @@ const AdvancedFilter: React.FC = () => {
                     <input
                       type="checkbox"
                       name="checkbox"
+
                       onClick={() => {
                         handleWithDate();
                         makeVisible(withDate);
                       }}
+
                     />
                     <span className="checkbox__control">
                       <svg
@@ -314,8 +319,8 @@ const AdvancedFilter: React.FC = () => {
                 <ReactLoading
                   color="#122145"
                   type="spinningBubbles"
-                  height="5rem"
-                  width="5rem"
+                  height="4.0625rem"
+                  width="4.0625rem"
                   className="load"
                 />
               ) : (

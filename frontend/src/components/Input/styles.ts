@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-
 import Tooltip from '../Tooltip';
+
 
 interface ContainerProps {
   isFocused: boolean;
@@ -17,7 +17,7 @@ export const Container = styled.section<ContainerProps>`
   padding-right: 1rem;
   width: 23.5rem;
 
-  height: 5rem;
+  height: 4.0625rem;
 
   color: #666360;
 
@@ -45,7 +45,7 @@ export const Container = styled.section<ContainerProps>`
 
   input {
     flex: 1;
-    font-size: 1.25rem;
+    font-size: 1rem;
     background: transparent;
     border: 0;
     color: #000;
@@ -61,14 +61,7 @@ export const Container = styled.section<ContainerProps>`
 `;
 
 export const Error = styled(Tooltip)`
-position: absolute;
-margin-left: 19.1rem;
-  svg {
-    height: 2.5rem;
-    width:  2.5rem;
-    margin: 0;
-    padding: 0;
-  }
+  position: absolute;
 
   span {
     background: #ff0000;

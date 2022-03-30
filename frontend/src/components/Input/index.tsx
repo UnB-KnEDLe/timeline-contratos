@@ -16,6 +16,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   colorError: string;
   containerStyle?: object;
   icon?: React.ComponentType<IconBaseProps>;
+  errorMargin: number;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -23,6 +24,7 @@ const Input: React.FC<InputProps> = ({
   colorError,
   containerStyle = {},
   icon: Icon,
+  errorMargin,
   ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -56,6 +58,7 @@ const Input: React.FC<InputProps> = ({
       isErrored={!!error}
       isFilled={isFilled}
       isFocused={isFocused}
+      {...rest}
     >
       {Icon && <Icon size="2.125rem" />}
       <input
@@ -63,10 +66,11 @@ const Input: React.FC<InputProps> = ({
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
         ref={inputRef}
+
         {...rest}
       />
       {error && (
-        <Error title={error}>
+        <Error style={{ 'marginLeft': `${errorMargin}rem` }} title={error}>
           <FiAlertCircle color={colorError} size="2rem" />
         </Error>
       )}

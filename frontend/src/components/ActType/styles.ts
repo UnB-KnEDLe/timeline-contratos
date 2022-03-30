@@ -8,12 +8,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 100%;
-  height: 15rem;
-  margin-bottom: 1.25rem;
 
+  width: 100%;
+  margin-bottom: 1.25rem;
 
   h2 {
     font-weight: bold;
@@ -26,7 +23,7 @@ export const Container = styled.div`
 export const Nav = styled.div<NavProps>`
   text-align: center;
   width: 100%;
-  height: 5rem;
+  height: 4.0625rem;
 
 
   ${(props) =>
@@ -41,7 +38,10 @@ export const Nav = styled.div<NavProps>`
 `;
 
 export const NavMenu = styled.li`
+
   width: 100%;
+
+  max-width: 30rem;
   line-height: 65px;
 
   text-transform: uppercase;
@@ -62,7 +62,7 @@ export const NavMenu = styled.li`
     background-color: #226f8c;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 16rem;
+    height: 10.7rem;
 
     li {
       display: block;
@@ -79,6 +79,8 @@ export const NavMenu = styled.li`
 `;
 
 export const NavMenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
   perspective: 5000px;
 `;
 
@@ -94,10 +96,11 @@ const menu1 = keyframes`
  `;
 
 export const NavMenuItems = styled.li`
+  align-items: center;
+  justify-content: center;
   animation: ${menu1} 0.5s;
   display: none;
   width: 100%;
-  height: 3.75rem;
   background-color: #2c8fb5;
   color: #fafafa;
   font-weight: bold;

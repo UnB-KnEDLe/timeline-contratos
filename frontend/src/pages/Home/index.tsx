@@ -116,11 +116,13 @@ export const Home: React.FC = () => {
                 <h2>Digite o número do processo</h2>
                 <WrapperProcess>
                   <Input
+                  style={{height: '5rem', fontSize: '1.3rem'}}
                     name="contract"
                     pattern="[0-9]*"
                     placeholder="00410-00024230/2017-06"
                     icon={HiOutlineDocumentSearch}
                     colorError="#c53030"
+                    errorMargin={19.5}
                   />
                   {load ? (
                     <ReactLoading

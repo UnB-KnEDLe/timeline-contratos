@@ -174,7 +174,7 @@ export const GlobalStyle = createGlobalStyle`
 .checkbox {
 	 display: grid;
 	 grid-template-columns: min-content auto;
-	 grid-gap: 0.5em;
+	 grid-gap: 1em;
    font-size: 1.125rem;
 
 	 color: var(--primary);
