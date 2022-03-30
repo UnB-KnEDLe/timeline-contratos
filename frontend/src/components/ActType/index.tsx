@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   Container,
-  Act,
-  Menu,
   Nav,
   NavMenu,
   NavMenuList,
@@ -48,42 +46,38 @@ const ActType: React.FC = () => {
 
   return (
     <Container>
-      <Act>
-        <Menu>
-          <h2>Tipo de Ato</h2>
-          <Nav offHover={offHover}>
-            <ul>
-              <NavMenu>
-                {chooseAct}
-                <NavMenuList>
+      <h2>Tipo de Ato</h2>
+      <Nav offHover={offHover}>
+        <ul>
+          <NavMenu>
+            {chooseAct}
+            <NavMenuList>
+              <NavMenuItems
+                onClick={() => {
+                  handleOffHover();
+                  setChooseAct('TODOS');
+                  pickIdAct(null as any);
+                }}
+              >
+                Todos
+              </NavMenuItems>
+              {typeActs.map((typeAct) => {
+                return (
                   <NavMenuItems
+                    key={typeAct.id_tipo}
                     onClick={() => {
+                      handleTypeAct(typeAct.id_tipo);
                       handleOffHover();
-                      setChooseAct('TODOS');
-                      pickIdAct(null as any);
                     }}
                   >
-                    Todos
+                    {typeAct.descricao}
                   </NavMenuItems>
-                  {typeActs.map((typeAct) => {
-                    return (
-                      <NavMenuItems
-                        key={typeAct.id_tipo}
-                        onClick={() => {
-                          handleTypeAct(typeAct.id_tipo);
-                          handleOffHover();
-                        }}
-                      >
-                        {typeAct.descricao}
-                      </NavMenuItems>
-                    );
-                  })}
-                </NavMenuList>
-              </NavMenu>
-            </ul>
-          </Nav>
-        </Menu>
-      </Act>
+                );
+              })}
+            </NavMenuList>
+          </NavMenu>
+        </ul>
+      </Nav>
     </Container>
   );
 };

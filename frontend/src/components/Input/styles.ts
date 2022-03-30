@@ -10,7 +10,7 @@ interface ContainerProps {
 
 export const Container = styled.section<ContainerProps>`
   background: #fff;
-  border-radius: 1rem;
+  border-radius: 0.125rem;
   /* Colocamos a bordinha que ficará vermelha */
   border: 0.3rem solid #666360;
   padding: 0.5rem;
@@ -61,10 +61,11 @@ export const Container = styled.section<ContainerProps>`
 `;
 
 export const Error = styled(Tooltip)`
-  margin-left: 6rem;
+position: absolute;
+margin-left: 19.1rem;
   svg {
-    height: 6rem;
-    width: 6rem;
+    height: 2.5rem;
+    width:  2.5rem;
     margin: 0;
     padding: 0;
   }

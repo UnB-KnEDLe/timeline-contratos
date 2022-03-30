@@ -7,7 +7,7 @@ export const Container = styled.button`
   justify-content: center;
   background: #2980b9;
   height: 5rem;
-  border-radius: 1rem;
+  border-radius: 0.125rem;
   width: 5rem;
   /* Colocamos a bordinha que ficará vermelha */
   border: 0;

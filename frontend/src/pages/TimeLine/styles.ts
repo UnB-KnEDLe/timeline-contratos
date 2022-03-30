@@ -9,16 +9,6 @@ interface RecProps {
 }
 
 export const Container = styled.div`
-  header {
-    height: 15rem;
-    background: url(${HeaderImg});
-    display: flex;
-    align-items: center;
-
-    img {
-      margin-left: 5rem;
-    }
-  }
   p {
     text-align: justify;
   }
@@ -39,17 +29,10 @@ export const Container = styled.div`
   }
 `;
 
-export const SubHeader = styled.div`
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  height: 3.3rem;
-`;
-
 export const MenuHeader = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 6.2rem;
+  margin-left: 10.5rem;
 
   a {
     text-decoration: none;

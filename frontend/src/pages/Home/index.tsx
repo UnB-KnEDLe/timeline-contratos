@@ -7,19 +7,19 @@ import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import ReactLoading from 'react-loading';
 import { useToast } from '../../hooks/toast';
-import homeTwoImg from '../../assets/homeTwo.svg';
+
 import {
   Container,
   Process,
-  Wrapper,
-  Text,
+  WrapperProcess,
   GlobalStyleModified,
   AdvancedButton,
-  InitialInformation,
   AnimationDiv,
+  Title,
 } from './styles';
-import Input from '../../components/InputHome';
+import Input from '../../components/Input';
 import AdvancedFilter from '../../components/AdvancedFilter';
+import Header from '../../components/Header';
 import getValidationErrors from '../../utils/getValidationErrors';
 import Button from '../../components/Button';
 import { useProcess } from '../../hooks/useProcess';
@@ -102,33 +102,19 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <Container direction={search}>
-        <InitialInformation>
-          <img src={homeTwoImg} alt="Logo" />
-          <h1>
-            Licitações
-            <br />
-            de um jeito
-            <br />
-            simples
-          </h1>
-        </InitialInformation>
+      <Header />
+      <Container search={search}>
+        <Title>
+          <h1>Licitações de um jeito simples</h1>
+          <p>Veja todas as etapas do procedimento de um processo licitatório</p>
+        </Title>
 
         {!search ? (
           <AnimationDiv>
-            <Text>
-              <p>
-                Veja todas as etapas do
-                <br /> procedimento
-                <br /> de um <b>processo licitatório</b>
-                <br />
-                através de uma <b>timeline</b>.
-              </p>
-            </Text>
             <Process>
               <Form ref={formRef} onSubmit={handleSubmit}>
                 <h2>Digite o número do processo</h2>
-                <Wrapper>
+                <WrapperProcess>
                   <Input
                     name="contract"
                     pattern="[0-9]*"
@@ -147,7 +133,7 @@ export const Home: React.FC = () => {
                   ) : (
                     <Button type="submit" icon={BiSearchAlt} />
                   )}
-                </Wrapper>
+                </WrapperProcess>
                 <AdvancedButton type="button" onClick={() => changeSearch()}>
                   Busca Avançada
                 </AdvancedButton>
@@ -158,9 +144,9 @@ export const Home: React.FC = () => {
           <AdvancedFilter />
         )}
 
-        <IconsAnimation />
       </Container>
       <GlobalStyleModified />
+      <IconsAnimation />
     </>
   );
 };

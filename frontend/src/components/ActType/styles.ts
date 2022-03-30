@@ -6,32 +6,28 @@ interface NavProps {
 
 export const Container = styled.div`
   display: flex;
-  margin-top: 2rem;
-`;
-
-export const Act = styled.div`
-  display: flex;
-  position: relative;
-  top: -8rem;
   flex-direction: column;
-  margin-top: 1.625rem;
-  margin-left: 3.5rem;
-  section {
-    width: 30rem;
-    margin-right: 3.5rem;
-  }
+  flex: 1;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 15rem;
+  margin-bottom: 1.25rem;
+
+
   h2 {
     font-weight: bold;
     color: var(--primary);
     margin-bottom: 1rem;
   }
-`;
 
-export const Menu = styled.div``;
+`;
 
 export const Nav = styled.div<NavProps>`
   text-align: center;
   width: 100%;
+  height: 5rem;
+
 
   ${(props) =>
     props.offHover &&
@@ -45,23 +41,28 @@ export const Nav = styled.div<NavProps>`
 `;
 
 export const NavMenu = styled.li`
-  float: left;
-  width: 30rem;
+  width: 100%;
   line-height: 65px;
+
   text-transform: uppercase;
   background-color: #2c8fb5;
+
   cursor: pointer;
   color: #fafafa;
+
   font-weight: bold;
   font-size: 0.95rem;
   overflow-y: scroll;
   overflow-x: hidden;
 
+  display: block;
+
+
   &:hover {
     background-color: #226f8c;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 18rem;
+    height: 16rem;
 
     li {
       display: block;
@@ -69,11 +70,11 @@ export const NavMenu = styled.li`
   }
 
   &:nth-child(1) {
-    border-top-left-radius: 10px;
+    border-top-left-radius: 2px;
   }
 
   &:last-child {
-    border-top-right-radius: 10px;
+    border-top-right-radius: 2px;
   }
 `;
 
@@ -95,8 +96,8 @@ const menu1 = keyframes`
 export const NavMenuItems = styled.li`
   animation: ${menu1} 0.5s;
   display: none;
-  width: 30rem;
-  height: 65px;
+  width: 100%;
+  height: 3.75rem;
   background-color: #2c8fb5;
   color: #fafafa;
   font-weight: bold;

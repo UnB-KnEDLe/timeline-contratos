@@ -20,11 +20,13 @@ import {
   Cancel,
   TypeButton,
   CheckDate,
+  WrapperProcessAndDate,
+  WrapperParametersForm,
+  WrapperTypeActAndCancelConfirmButton,
 } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
 import Input from '../Input';
 import { useProcess } from '../../hooks/useProcess';
-import InputVariation from '../InputVariation';
 import { useAdvancedSearch } from '../../hooks/useAdvancedSearch';
 
 interface ContractFormData {
@@ -203,123 +205,131 @@ const AdvancedFilter: React.FC = () => {
         <h1>Pesquisa Avançada</h1>
       </Header>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <NumberProcess
-          onVisibleProcess={onVisibleProcess}
-          withProcessStyle={withProcess}
-        >
-          <h2>Digite o número do processo</h2>
-          <InputVariation
-            readOnly={!!withProcess}
-            name="process"
-            pattern="[0-9]*"
-            placeholder="00410-00024230/2017-06"
-            icon={HiOutlineDocumentSearch}
-            colorError={withProcess ? '#e7e7e7' : '#c53030'}
-          />
-          <CheckProcess>
-            <label className="checkbox">
-              <span className="checkbox__input">
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  onClick={() => {
-                    handleWithProcess();
-                    makeVisibleProcess(withProcess);
-                  }}
-                />
-                <span className="checkbox__control">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      d="M1.73 12.91l6.37 6.37L22.79 4.59"
+        <WrapperParametersForm>
+          <WrapperProcessAndDate>
+            <NumberProcess
+              onVisibleProcess={onVisibleProcess}
+              withProcessStyle={withProcess}
+            >
+              <h2>Número do processo</h2>
+              <Input
+                readOnly={!!withProcess}
+                name="process"
+                pattern="[0-9]*"
+                placeholder="00410-00024230/2017-06"
+                icon={HiOutlineDocumentSearch}
+                colorError={withProcess ? '#e7e7e7' : '#c53030'}
+              />
+              <CheckProcess>
+                <label className="checkbox">
+                  <span className="checkbox__input">
+                    <input
+                      type="checkbox"
+                      name="checkbox"
+                      onClick={() => {
+                        handleWithProcess();
+                        makeVisibleProcess(withProcess);
+                      }}
                     />
-                  </svg>
-                </span>
-              </span>
-              <p>Sem número de processo</p>
-            </label>
-          </CheckProcess>
-        </NumberProcess>
-        <DateProcess onVisible={onVisible} withDateStyle={withDate}>
-          <h2>Data</h2>
-          <span>
-            <Input
-              readOnly={!!withDate}
-              name="dateOne"
-              placeholder="01/01/2020"
-              icon={FaRegCalendarAlt}
-              colorError={withDate ? '#e7e7e7' : '#c53030'}
-            />
-
-            <h3>até</h3>
-
-            <Input
-              readOnly={!!withDate}
-              name="dateTwo"
-              placeholder="01/05/2021"
-              icon={FaRegCalendarAlt}
-              colorError={withDate ? '#e7e7e7' : '#c53030'}
-            />
-          </span>
-          <CheckDate>
-            <label className="checkbox">
-              <span className="checkbox__input">
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  onClick={() => {
-                    handleWithDate();
-                    makeVisible(withDate);
-                  }}
+                    <span className="checkbox__control">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          d="M1.73 12.91l6.37 6.37L22.79 4.59"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <p>Sem número de processo</p>
+                </label>
+              </CheckProcess>
+            </NumberProcess>
+            <DateProcess onVisible={onVisible} withDateStyle={withDate}>
+              <h2>Data</h2>
+              <span>
+                <Input
+                  readOnly={!!withDate}
+                  name="dateOne"
+                  placeholder="01/01/2020"
+                  icon={FaRegCalendarAlt}
+                  colorError={withDate ? '#e7e7e7' : '#c53030'}
                 />
-                <span className="checkbox__control">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      d="M1.73 12.91l6.37 6.37L22.79 4.59"
-                    />
-                  </svg>
-                </span>
+
+                <h3>até</h3>
+
+                <Input
+                  readOnly={!!withDate}
+                  name="dateTwo"
+                  placeholder="01/05/2021"
+                  icon={FaRegCalendarAlt}
+                  colorError={withDate ? '#e7e7e7' : '#c53030'}
+                />
               </span>
-              <p>Sem data específica</p>
-            </label>
-          </CheckDate>
-        </DateProcess>
-        <TypeButton>
-          <Cancel type="button" onClick={() => changeSearch()}>
-            Cancelar
-          </Cancel>
-          {load ? (
-            <ReactLoading
-              color="#122145"
-              type="spinningBubbles"
-              height="5rem"
-              width="5rem"
-              className="load"
-            />
-          ) : (
-            <Button
-              style={{ marginTop: '1.2rem' }}
-              type="submit"
-              icon={BiSearchAlt}
-            />
-          )}
-        </TypeButton>
-        <ActType />
+              <CheckDate>
+                <label className="checkbox">
+                  <span className="checkbox__input">
+                    <input
+                      type="checkbox"
+                      name="checkbox"
+                      onClick={() => {
+                        handleWithDate();
+                        makeVisible(withDate);
+                      }}
+                    />
+                    <span className="checkbox__control">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          d="M1.73 12.91l6.37 6.37L22.79 4.59"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <p>Sem data específica</p>
+                </label>
+              </CheckDate>
+            </DateProcess>
+          </WrapperProcessAndDate>
+          <WrapperTypeActAndCancelConfirmButton>
+            <ActType />
+            <TypeButton>
+            <Cancel type="button" onClick={() => changeSearch()}>
+              Cancelar
+            </Cancel>
+              {load ? (
+                <ReactLoading
+                  color="#122145"
+                  type="spinningBubbles"
+                  height="5rem"
+                  width="5rem"
+                  className="load"
+                />
+              ) : (
+                <Button
+                  type="submit"
+                  icon={BiSearchAlt}
+                />
+              )}
+          </TypeButton>
+          </WrapperTypeActAndCancelConfirmButton>
+
+        </WrapperParametersForm>
+
+
       </Form>
     </Container>
   );

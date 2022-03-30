@@ -38,12 +38,12 @@ import {
   Topic,
   BodyStyle,
   Footer,
-  SubHeader,
   MenuHeader,
 } from './styles';
 import { useProcess } from '../../hooks/useProcess';
 import { useAdvancedSearch } from '../../hooks/useAdvancedSearch';
 import api from '../../services/api';
+import Header from '../../components/Header';
 
 interface ColorTypes {
   [key: number]: string;
@@ -147,10 +147,7 @@ export const TimelineActs: React.FC = () => {
 
   return (
     <Container>
-      <header>
-        <img src={whiteLogo} alt="whiteLogo" />
-      </header>
-      <SubHeader>
+      <Header />
         <MenuHeader>
           <Link
             to="/"
@@ -163,7 +160,6 @@ export const TimelineActs: React.FC = () => {
           <AiOutlineRight color="#959595" style={{ marginRight: '0.3rem' }} />
           <h3>Timeline</h3>
         </MenuHeader>
-      </SubHeader>
 
       {loading ? (
         <ReactLoading

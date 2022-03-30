@@ -24,16 +24,15 @@ const appearFromLeft = keyframes`
 
 export const Container = styled.div`
   display: flex;
+  width: 70%;
   flex-direction: column;
+  margin: 2rem 10.625rem 0rem 10.625rem;
 
   animation: ${appearFromLeft} 1s;
 
-  height: 47.5rem;
-  width: 38rem;
   border: 0.5rem solid var(--primary);
-  margin-top: 6rem;
-  margin-left: 20rem;
   border-radius: 26px 26px 0px 0px;
+  border-radius: 0.125rem;
   background-color: var(--background);
 `;
 
@@ -45,7 +44,6 @@ export const Header = styled.header`
   width: 100%;
   background: url(${headerAdvancedSearch}) no-repeat center;
   background-size: cover;
-  border-radius: 16px 16px 0px 0px;
 
   h1 {
     color: var(--background);
@@ -55,11 +53,24 @@ export const Header = styled.header`
   }
 `;
 
+export const WrapperParametersForm = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const WrapperProcessAndDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5rem;
+  margin-bottom: 1.625rem;
+`;
+
 export const NumberProcess = styled.div<NumberProcessProps>`
   display: flex;
   flex-direction: column;
   margin-top: 1.625rem;
-  margin-left: 3.5rem;
+
   section {
     width: 30rem;
     margin-right: 3.5rem;
@@ -117,8 +128,6 @@ export const DateProcess = styled.div<DateProps>`
   display: flex;
   flex-direction: column;
   margin-top: 1.625rem;
-  margin-left: 3.5rem;
-
   span {
     display: flex;
     align-items: center;
@@ -191,13 +200,6 @@ export const DateProcess = styled.div<DateProps>`
     margin-bottom: 1rem;
   }
 `;
-export const TypeButton = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: 3.5rem;
-  top: 9.5rem;
-`;
 
 export const CheckProcess = styled.div`
   display: flex;
@@ -224,6 +226,21 @@ export const CheckDate = styled.div`
   }
 `;
 
+export const WrapperTypeActAndCancelConfirmButton = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1.625rem;
+  margin-right: 3.5rem;
+`;
+
+export const TypeButton = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.625rem;
+`;
+
 export const Cancel = styled.button`
   display: flex;
   align-items: center;
@@ -231,6 +248,7 @@ export const Cancel = styled.button`
   background: #e7e7e7;
   height: 5rem;
   border-radius: 1rem;
+  margin-left: 25rem;
   width: 7.25rem;
   /* Colocamos a bordinha que ficará vermelha */
   border: 0;
@@ -240,8 +258,6 @@ export const Cancel = styled.button`
   font-size: 1.125rem;
   transition: background-color 0.2s;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 1.2rem;
-  margin-right: 18rem;
 
   &:hover {
     background: ${shade(0.2, '#E7E7E7')};
